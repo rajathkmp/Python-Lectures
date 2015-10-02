@@ -7,7 +7,12 @@ Python is a modern, robust, high level programming language. It is very easy to 
 
 ##Installation
 
-Mac OS X and Linux comes pre installed with python. Windows users can download python from https://www.python.org/downloads/ .
+Mac OS X and Linux comes pre-installed with Python. 
+
+Windows users can download Python from [https://www.python.org/downloads/](https://www.python.org/downloads/).
+
+Note : Make sure you download the corresponding version of Python depending on your Windows installation (34-bit or 64-bit)
+
 
 To install IPython run,
 
@@ -32,6 +37,8 @@ Download Canopy from https://store.enthought.com/downloads/#default
 Canopy has a premium version which offers 300+ python packages. But the free version works just fine. Canopy as of now supports only 2.7 but it comes with its own text editor and IPython environment.
 
 ##Launching IPython Notebook
+
+The IPython Notebook is an interactive computational environment, in which you can combine code execution, rich text, mathematics, plots and rich media.
 
 From the terminal
 
