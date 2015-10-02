@@ -1,0 +1,54 @@
+
+#Python-Lectures
+
+##Introduction
+
+Python is a modern, robust, high level programming language. It is very easy to pick up even if you are completely new to programming.
+
+##Installation
+
+Mac OS X and Linux comes pre installed with python. Windows users can download python from https://www.python.org/downloads/ .
+
+To install IPython run,
+
+    $ pip install ipython[all]
+    
+This will install all the necessary dependencies for the notebook, qtconsole, tests etc.
+
+###Installation from unofficial distributions
+
+Installing all the necessary libraries might prove troublesome. Anaconda and Canopy comes pre packaged with all the necessary python libraries and also IPython.
+
+####Anaconda
+
+Download Anaconda from https://www.continuum.io/downloads
+
+Anaconda is completely free and includes more than 300 python packages. Both python 2.7 and 3.4 options are available.
+
+####Canopy
+
+Download Canopy from https://store.enthought.com/downloads/#default
+
+Canopy has a premium version which offers 300+ python packages. But the free version works just fine. Canopy as of now supports only 2.7 but it comes with its own text editor and IPython environment.
+
+##Launching IPython Notebook
+
+From the terminal
+
+    ipython notebook
+
+In Canopy and Anaconda, Open the respective terminals and execute the above.
+
+##How to learn from this resource?
+
+Download all the ipython notebooks from this repository https://github.com/rajathkumarmp/Python-Lectures
+
+Launch ipython notebook from the folder which contains the notebooks. Open each one of them
+
+    Cell > All Output > Clear
+    
+This will clear all the outputs and now you can understand each statement and learn interactively.
+
+##License
+
+This work is licensed under the Creative Commons Attribution 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by/3.0/
