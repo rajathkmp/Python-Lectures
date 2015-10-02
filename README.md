@@ -43,7 +43,7 @@ In Canopy and Anaconda, Open the respective terminals and execute the above.
 
 You can download the pdf copy from [here](https://github.com/rajathkumarmp/Python-Lectures/blob/master/Python.pdf)
 
-But it is better to download all the ipython notebooks from this repository https://github.com/rajathkumarmp/Python-Lectures and learn it on the notebook itself rather than having to refer to a pdf.
+It is better to download all the ipython notebooks from this repository https://github.com/rajathkumarmp/Python-Lectures and learn it on the notebook itself rather than having to refer to a pdf.
 
 Launch ipython notebook from the folder which contains the notebooks. Open each one of them
 
