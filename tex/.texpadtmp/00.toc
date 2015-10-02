@@ -1,0 +1,58 @@
+\contentsline {section}{\numberline {1}Python}{3}{section.1}
+\contentsline {subsection}{\numberline {1.1}Introduction}{3}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}Installation}{3}{subsection.1.2}
+\contentsline {subsubsection}{\numberline {1.2.1}Installation from unofficial distributions}{3}{subsubsection.1.2.1}
+\contentsline {paragraph}{Anaconda}{3}{section*.2}
+\contentsline {paragraph}{Canopy}{3}{section*.3}
+\contentsline {subsection}{\numberline {1.3}Launching IPython Notebook}{3}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}How to learn from this resource?}{3}{subsection.1.4}
+\contentsline {subsection}{\numberline {1.5}License}{3}{subsection.1.5}
+\contentsline {section}{\numberline {2}The Zen Of Python}{4}{section.2}
+\contentsline {section}{\numberline {3}Variables}{4}{section.3}
+\contentsline {section}{\numberline {4}Operators}{4}{section.4}
+\contentsline {subsection}{\numberline {4.1}Arithmetic Operators}{4}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}Relational Operators}{5}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}Bitwise Operators}{6}{subsection.4.3}
+\contentsline {section}{\numberline {5}Built-in Functions}{6}{section.5}
+\contentsline {subsection}{\numberline {5.1}Conversion from one system to another}{6}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Simplifying Arithmetic Operations}{7}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Accepting User Inputs}{9}{subsection.5.3}
+\contentsline {section}{\numberline {6}Print Statement}{10}{section.6}
+\contentsline {subsection}{\numberline {6.1}Other Examples}{11}{subsection.6.1}
+\contentsline {section}{\numberline {7}PrecisionWidth and FieldWidth}{12}{section.7}
+\contentsline {section}{\numberline {8}Data Structures}{13}{section.8}
+\contentsline {subsection}{\numberline {8.1}Lists}{13}{subsection.8.1}
+\contentsline {subsubsection}{\numberline {8.1.1}Indexing}{13}{subsubsection.8.1.1}
+\contentsline {subsubsection}{\numberline {8.1.2}Slicing}{14}{subsubsection.8.1.2}
+\contentsline {subsubsection}{\numberline {8.1.3}Built in List Functions}{14}{subsubsection.8.1.3}
+\contentsline {subsubsection}{\numberline {8.1.4}Copying a list}{18}{subsubsection.8.1.4}
+\contentsline {subsection}{\numberline {8.2}Tuples}{19}{subsection.8.2}
+\contentsline {subsubsection}{\numberline {8.2.1}Mapping one tuple to another}{20}{subsubsection.8.2.1}
+\contentsline {subsubsection}{\numberline {8.2.2}Built In Tuple functions}{20}{subsubsection.8.2.2}
+\contentsline {subsection}{\numberline {8.3}Sets}{20}{subsection.8.3}
+\contentsline {subsubsection}{\numberline {8.3.1}Built-in Functions}{20}{subsubsection.8.3.1}
+\contentsline {subsection}{\numberline {8.4}Strings}{22}{subsection.8.4}
+\contentsline {subsubsection}{\numberline {8.4.1}Built-in Functions}{22}{subsubsection.8.4.1}
+\contentsline {subsection}{\numberline {8.5}Dictionaries}{26}{subsection.8.5}
+\contentsline {subsubsection}{\numberline {8.5.1}Built-in Functions}{26}{subsubsection.8.5.1}
+\contentsline {section}{\numberline {9}Control Flow Statements}{28}{section.9}
+\contentsline {subsection}{\numberline {9.1}If}{28}{subsection.9.1}
+\contentsline {subsection}{\numberline {9.2}If-else}{28}{subsection.9.2}
+\contentsline {subsection}{\numberline {9.3}if-elif}{28}{subsection.9.3}
+\contentsline {subsection}{\numberline {9.4}Loops}{29}{subsection.9.4}
+\contentsline {subsubsection}{\numberline {9.4.1}For}{29}{subsubsection.9.4.1}
+\contentsline {subsubsection}{\numberline {9.4.2}While}{30}{subsubsection.9.4.2}
+\contentsline {subsection}{\numberline {9.5}Break}{30}{subsection.9.5}
+\contentsline {subsection}{\numberline {9.6}Continue}{30}{subsection.9.6}
+\contentsline {subsection}{\numberline {9.7}List Comprehensions}{31}{subsection.9.7}
+\contentsline {section}{\numberline {10}Functions}{32}{section.10}
+\contentsline {subsection}{\numberline {10.1}Return Statement}{33}{subsection.10.1}
+\contentsline {subsection}{\numberline {10.2}Implicit arguments}{34}{subsection.10.2}
+\contentsline {subsection}{\numberline {10.3}Any number of arguments}{34}{subsection.10.3}
+\contentsline {subsection}{\numberline {10.4}Global and Local Variables}{35}{subsection.10.4}
+\contentsline {subsection}{\numberline {10.5}Lambda Functions}{36}{subsection.10.5}
+\contentsline {subsubsection}{\numberline {10.5.1}map}{36}{subsubsection.10.5.1}
+\contentsline {subsubsection}{\numberline {10.5.2}filter}{37}{subsubsection.10.5.2}
+\contentsline {section}{\numberline {11}Classes}{38}{section.11}
+\contentsline {subsection}{\numberline {11.1}Inheritance}{41}{subsection.11.1}
+\contentsline {section}{\numberline {12}Where to go from here?}{43}{section.12}

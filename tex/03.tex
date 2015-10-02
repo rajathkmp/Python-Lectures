@@ -1,0 +1,1102 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+
+    
+    
+    \definecolor{orange}{cmyk}{0,0.4,0.8,0.2}
+    \definecolor{darkorange}{rgb}{.71,0.21,0.01}
+    \definecolor{darkgreen}{rgb}{.12,.54,.11}
+    \definecolor{myteal}{rgb}{.26, .44, .56}
+    \definecolor{gray}{gray}{0.45}
+    \definecolor{lightgray}{gray}{.95}
+    \definecolor{mediumgray}{gray}{.8}
+    \definecolor{inputbackground}{rgb}{.95, .95, .85}
+    \definecolor{outputbackground}{rgb}{.95, .95, .95}
+    \definecolor{traceback}{rgb}{1, .95, .95}
+    % ansi colors
+    \definecolor{red}{rgb}{.6,0,0}
+    \definecolor{green}{rgb}{0,.65,0}
+    \definecolor{brown}{rgb}{0.6,0.6,0}
+    \definecolor{blue}{rgb}{0,.145,.698}
+    \definecolor{purple}{rgb}{.698,.145,.698}
+    \definecolor{cyan}{rgb}{0,.698,.698}
+    \definecolor{lightgray}{gray}{0.5}
+    
+    % bright ansi colors
+    \definecolor{darkgray}{gray}{0.25}
+    \definecolor{lightred}{rgb}{1.0,0.39,0.28}
+    \definecolor{lightgreen}{rgb}{0.48,0.99,0.0}
+    \definecolor{lightblue}{rgb}{0.53,0.81,0.92}
+    \definecolor{lightpurple}{rgb}{0.87,0.63,0.87}
+    \definecolor{lightcyan}{rgb}{0.5,1.0,0.83}
+    
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatability definitions
+    \def\gt{>}
+    \def\lt{<}
+    % Document parameters
+    \title{}
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=blue,
+      linkcolor=darkorange,
+      citecolor=darkgreen,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+   
+    
+    
+
+    \begin{document}
+    
+    
+    \maketitle
+    
+    
+
+    
+    \section{Data Structures}\label{data-structures}
+
+    In simple terms, It is the the collection or group of data in a
+particular structure.
+
+    \subsection{Lists}\label{lists}
+
+    Lists are the most commonly used data structure. Think of it as a
+sequence of data that is enclosed in square brackets and data are
+separated by a comma. Each of these data can be accessed by calling it's
+index value.
+
+Lists are declared by just equating a variable to `{[} {]}' or list.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}1}]:} \PY{n}{a} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}2}]:} \PY{k}{print} \PY{n+nb}{type}\PY{p}{(}\PY{n}{a}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+<type 'list'>
+    \end{Verbatim}
+
+    One can directly assign the sequence of data to a list x as shown.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{x} \PY{o}{=} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{apple}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{orange}\PY{l+s}{\PYZsq{}}\PY{p}{]}
+\end{Verbatim}
+
+    \subsubsection{Indexing}\label{indexing}
+
+    In python, Indexing starts from 0. Thus now the list x, which has two
+elements will have apple at 0 index and orange at 1 index.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}4}]:} \PY{n}{x}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}4}]:} 'apple'
+\end{Verbatim}
+        
+    Indexing can also be done in reverse order. That is the last element can
+be accessed first. Here, indexing starts from -1. Thus index value -1
+will be orange and index -2 will be apple.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{x}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}5}]:} 'orange'
+\end{Verbatim}
+        
+    As you might have already guessed, x{[}0{]} = x{[}-2{]}, x{[}1{]} =
+x{[}-1{]}. This concept can be extended towards lists with more many
+elements.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{y} \PY{o}{=} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{carrot}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{potato}\PY{l+s}{\PYZsq{}}\PY{p}{]}
+\end{Verbatim}
+
+    Here we have declared two lists x and y each containing its own data.
+Now, these two lists can again be put into another list say z which will
+have it's data as two lists. This list inside a list is called as nested
+lists and is how an array would be declared which we will see later.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{z}  \PY{o}{=} \PY{p}{[}\PY{n}{x}\PY{p}{,}\PY{n}{y}\PY{p}{]}
+        \PY{k}{print} \PY{n}{z}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[['apple', 'orange'], ['carrot', 'potato']]
+    \end{Verbatim}
+
+    Indexing in nested lists can be quite confusing if you do not understand
+how indexing works in python. So let us break it down and then arrive at
+a conclusion.
+
+Let us access the data `apple' in the above nested list. First, at index
+0 there is a list {[}`apple',`orange'{]} and at index 1 there is another
+list {[}`carrot',`potato'{]}. Hence z{[}0{]} should give us the first
+list which contains `apple'.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}8}]:} \PY{n}{z1} \PY{o}{=} \PY{n}{z}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+        \PY{k}{print} \PY{n}{z1}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+['apple', 'orange']
+    \end{Verbatim}
+
+    Now observe that z1 is not at all a nested list thus to access `apple',
+z1 should be indexed at 0.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{z1}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}9}]:} 'apple'
+\end{Verbatim}
+        
+    Instead of doing the above, In python, you can access `apple' by just
+writing the index values each time side by side.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}10}]:} \PY{n}{z}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}10}]:} 'apple'
+\end{Verbatim}
+        
+    If there was a list inside a list inside a list then you can access the
+innermost value by executing z{[} {]}{[} {]}{[} {]}.
+
+    \subsubsection{Slicing}\label{slicing}
+
+    Indexing was only limited to accessing a single element, Slicing on the
+other hand is accessing a sequence of data inside the list. In other
+words ``slicing'' the list.
+
+Slicing is done by defining the index values of the first element and
+the last element from the parent list that is required in the sliced
+list. It is written as parentlist{[} a : b {]} where a,b are the index
+values from the parent list. If a or b is not defined then the index
+value is considered to be the first value for a if a is not defined and
+the last value for b when b is not defined.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}11}]:} \PY{n}{num} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{,}\PY{l+m+mi}{7}\PY{p}{,}\PY{l+m+mi}{8}\PY{p}{,}\PY{l+m+mi}{9}\PY{p}{]}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}12}]:} \PY{k}{print} \PY{n}{num}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{:}\PY{l+m+mi}{4}\PY{p}{]}
+         \PY{k}{print} \PY{n}{num}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{:}\PY{p}{]}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[0, 1, 2, 3]
+[4, 5, 6, 7, 8, 9]
+    \end{Verbatim}
+
+    You can also slice a parent list with a fixed length or step length.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}13}]:} \PY{n}{num}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{9}\PY{p}{:}\PY{l+m+mi}{3}\PY{p}{]}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}13}]:} [0, 3, 6]
+\end{Verbatim}
+        
+    \subsubsection{Built in List Functions}\label{built-in-list-functions}
+
+    To find the length of the list or the number of elements in a list,
+\textbf{len( )} is used.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}14}]:} \PY{n+nb}{len}\PY{p}{(}\PY{n}{num}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}14}]:} 10
+\end{Verbatim}
+        
+    If the list consists of all integer elements then \textbf{min( )} and
+\textbf{max( )} gives the minimum and maximum value in the list.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}15}]:} \PY{n+nb}{min}\PY{p}{(}\PY{n}{num}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}15}]:} 0
+\end{Verbatim}
+        
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}16}]:} \PY{n+nb}{max}\PY{p}{(}\PY{n}{num}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}16}]:} 9
+\end{Verbatim}
+        
+    Lists can be concatenated by adding, `+' them. The resultant list will
+contain all the elements of the lists that were added. The resultant
+list will not be a nested list.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}17}]:} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{]} \PY{o}{+} \PY{p}{[}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{7}\PY{p}{]}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}17}]:} [1, 2, 3, 5, 4, 7]
+\end{Verbatim}
+        
+    There might arise a requirement where you might need to check if a
+particular element is there in a predefined list. Consider the below
+list.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}18}]:} \PY{n}{names} \PY{o}{=} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{Earth}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{Air}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{Fire}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{Water}\PY{l+s}{\PYZsq{}}\PY{p}{]}
+\end{Verbatim}
+
+    To check if `Fire' and `Rajath' is present in the list names. A
+conventional approach would be to use a for loop and iterate over the
+list and use the if condition. But in python you can use `a in b'
+concept which would return `True' if a is present in b and `False' if
+not.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}19}]:} \PY{l+s}{\PYZsq{}}\PY{l+s}{Fire}\PY{l+s}{\PYZsq{}} \PY{o+ow}{in} \PY{n}{names}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}19}]:} True
+\end{Verbatim}
+        
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}20}]:} \PY{l+s}{\PYZsq{}}\PY{l+s}{Rajath}\PY{l+s}{\PYZsq{}} \PY{o+ow}{in} \PY{n}{names}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}20}]:} False
+\end{Verbatim}
+        
+    In a list with elements as string, \textbf{max( )} and \textbf{min( )}
+is applicable. \textbf{max( )} would return a string element whose ASCII
+value is the highest and the lowest when \textbf{min( )} is used. Note
+that only the first index of each element is considered each time and if
+they value is the same then second index considered so on and so forth.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}21}]:} \PY{n}{mlist} \PY{o}{=} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{bzaa}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{ds}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{nc}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{az}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{z}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{klm}\PY{l+s}{\PYZsq{}}\PY{p}{]}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}22}]:} \PY{k}{print} \PY{n+nb}{max}\PY{p}{(}\PY{n}{mlist}\PY{p}{)}
+         \PY{k}{print} \PY{n+nb}{min}\PY{p}{(}\PY{n}{mlist}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+z
+az
+    \end{Verbatim}
+
+    Here the first index of each element is considered and thus z has the
+highest ASCII value thus it is returned and minimum ASCII is a. But what
+if numbers are declared as strings?
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}23}]:} \PY{n}{nlist} \PY{o}{=} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{1}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{94}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{93}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{1000}\PY{l+s}{\PYZsq{}}\PY{p}{]}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}24}]:} \PY{k}{print} \PY{n+nb}{max}\PY{p}{(}\PY{n}{nlist}\PY{p}{)}
+         \PY{k}{print} \PY{n+nb}{min}\PY{p}{(}\PY{n}{nlist}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+94
+1
+    \end{Verbatim}
+
+    Even if the numbers are declared in a string the first index of each
+element is considered and the maximum and minimum values are returned
+accordingly.
+
+    But if you want to find the \textbf{max( )} string element based on the
+length of the string then another parameter `key=len' is declared inside
+the \textbf{max( )} and \textbf{min( )} function.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}25}]:} \PY{k}{print} \PY{n+nb}{max}\PY{p}{(}\PY{n}{names}\PY{p}{,} \PY{n}{key}\PY{o}{=}\PY{n+nb}{len}\PY{p}{)}
+         \PY{k}{print} \PY{n+nb}{min}\PY{p}{(}\PY{n}{names}\PY{p}{,} \PY{n}{key}\PY{o}{=}\PY{n+nb}{len}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Earth
+Air
+    \end{Verbatim}
+
+    But even `Water' has length 5. \textbf{max()} or \textbf{min()} function
+returns the first element when there are two or more elements with the
+same length.
+
+Any other built in function can be used or lambda function (will be
+discussed later) in place of len.
+
+A string can be converted into a list by using the \textbf{list()}
+function.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}26}]:} \PY{n+nb}{list}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{hello}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}26}]:} ['h', 'e', 'l', 'l', 'o']
+\end{Verbatim}
+        
+    \textbf{append( )} is used to add a element at the end of the list.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}27}]:} \PY{n}{lst} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{8}\PY{p}{,}\PY{l+m+mi}{7}\PY{p}{]}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}28}]:} \PY{n}{lst}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}
+         \PY{k}{print} \PY{n}{lst}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[1, 1, 4, 8, 7, 1]
+    \end{Verbatim}
+
+    \textbf{count( )} is used to count the number of a particular element
+that is present in the list.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}29}]:} \PY{n}{lst}\PY{o}{.}\PY{n}{count}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}29}]:} 3
+\end{Verbatim}
+        
+    \textbf{append( )} function can also be used to add a entire list at the
+end. Observe that the resultant list becomes a nested list.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}30}]:} \PY{n}{lst1} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{8}\PY{p}{]}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}31}]:} \PY{n}{lst}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{lst1}\PY{p}{)}
+         \PY{k}{print} \PY{n}{lst}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[1, 1, 4, 8, 7, 1, [5, 4, 2, 8]]
+    \end{Verbatim}
+
+    But if nested list is not what is desired then \textbf{extend( )}
+function can be used.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}32}]:} \PY{n}{lst}\PY{o}{.}\PY{n}{extend}\PY{p}{(}\PY{n}{lst1}\PY{p}{)}
+         \PY{k}{print} \PY{n}{lst}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[1, 1, 4, 8, 7, 1, [5, 4, 2, 8], 5, 4, 2, 8]
+    \end{Verbatim}
+
+    \textbf{index( )} is used to find the index value of a particular
+element. Note that if there are multiple elements of the same value then
+the first index value of that element is returned.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}33}]:} \PY{n}{lst}\PY{o}{.}\PY{n}{index}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}33}]:} 0
+\end{Verbatim}
+        
+    \textbf{insert(x,y)} is used to insert a element y at a specified index
+value x. \textbf{append( )} function made it only possible to insert at
+the end.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}34}]:} \PY{n}{lst}\PY{o}{.}\PY{n}{insert}\PY{p}{(}\PY{l+m+mi}{5}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{name}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{k}{print} \PY{n}{lst}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[1, 1, 4, 8, 7, 'name', 1, [5, 4, 2, 8], 5, 4, 2, 8]
+    \end{Verbatim}
+
+    \textbf{insert(x,y)} inserts but does not replace element. If you want
+to replace the element with another element you simply assign the value
+to that particular index.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}35}]:} \PY{n}{lst}\PY{p}{[}\PY{l+m+mi}{5}\PY{p}{]} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{Python}\PY{l+s}{\PYZsq{}}
+         \PY{k}{print} \PY{n}{lst}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[1, 1, 4, 8, 7, 'Python', 1, [5, 4, 2, 8], 5, 4, 2, 8]
+    \end{Verbatim}
+
+    \textbf{pop( )} function return the last element in the list. This is
+similar to the operation of a stack. Hence it wouldn't be wrong to tell
+that lists can be used as a stack.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}36}]:} \PY{n}{lst}\PY{o}{.}\PY{n}{pop}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}36}]:} 8
+\end{Verbatim}
+        
+    Index value can be specified to pop a ceratin element corresponding to
+that index value.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}37}]:} \PY{n}{lst}\PY{o}{.}\PY{n}{pop}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}37}]:} 1
+\end{Verbatim}
+        
+    \textbf{pop( )} is used to remove element based on it's index value
+which can be assigned to a variable. One can also remove element by
+specifying the element itself using the \textbf{remove( )} function.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}38}]:} \PY{n}{lst}\PY{o}{.}\PY{n}{remove}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Python}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{k}{print} \PY{n}{lst}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[1, 4, 8, 7, 1, [5, 4, 2, 8], 5, 4, 2]
+    \end{Verbatim}
+
+    Alternative to \textbf{remove} function but with using index value is
+\textbf{del}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}39}]:} \PY{k}{del} \PY{n}{lst}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}
+         \PY{k}{print} \PY{n}{lst}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[1, 8, 7, 1, [5, 4, 2, 8], 5, 4, 2]
+    \end{Verbatim}
+
+    The entire elements present in the list can be reversed by using the
+\textbf{reverse()} function.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}40}]:} \PY{n}{lst}\PY{o}{.}\PY{n}{reverse}\PY{p}{(}\PY{p}{)}
+         \PY{k}{print} \PY{n}{lst}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[2, 4, 5, [5, 4, 2, 8], 1, 7, 8, 1]
+    \end{Verbatim}
+
+    Note that the nested list {[}5,4,2,8{]} is treated as a single element
+of the parent list lst. Thus the elements inside the nested list is not
+reversed.
+
+Python offers built in operation \textbf{sort( )} to arrange the
+elements in ascending order.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}41}]:} \PY{n}{lst}\PY{o}{.}\PY{n}{sort}\PY{p}{(}\PY{p}{)}
+         \PY{k}{print} \PY{n}{lst}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[1, 1, 2, 4, 5, 7, 8, [5, 4, 2, 8]]
+    \end{Verbatim}
+
+    For descending order, By default the reverse condition will be False for
+reverse. Hence changing it to True would arrange the elements in
+descending order.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}42}]:} \PY{n}{lst}\PY{o}{.}\PY{n}{sort}\PY{p}{(}\PY{n}{reverse}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{)}
+         \PY{k}{print} \PY{n}{lst}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[[5, 4, 2, 8], 8, 7, 5, 4, 2, 1, 1]
+    \end{Verbatim}
+
+    Similarly for lists containing string elements, \textbf{sort( )} would
+sort the elements based on it's ASCII value in ascending and by
+specifying reverse=True in descending.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}43}]:} \PY{n}{names}\PY{o}{.}\PY{n}{sort}\PY{p}{(}\PY{p}{)}
+         \PY{k}{print} \PY{n}{names}
+         \PY{n}{names}\PY{o}{.}\PY{n}{sort}\PY{p}{(}\PY{n}{reverse}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{)}
+         \PY{k}{print} \PY{n}{names}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+['Air', 'Earth', 'Fire', 'Water']
+['Water', 'Fire', 'Earth', 'Air']
+    \end{Verbatim}
+
+    To sort based on length key=len should be specified as shown.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}44}]:} \PY{n}{names}\PY{o}{.}\PY{n}{sort}\PY{p}{(}\PY{n}{key}\PY{o}{=}\PY{n+nb}{len}\PY{p}{)}
+         \PY{k}{print} \PY{n}{names}
+         \PY{n}{names}\PY{o}{.}\PY{n}{sort}\PY{p}{(}\PY{n}{key}\PY{o}{=}\PY{n+nb}{len}\PY{p}{,}\PY{n}{reverse}\PY{o}{=}\PY{n+nb+bp}{True}\PY{p}{)}
+         \PY{k}{print} \PY{n}{names}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+['Air', 'Fire', 'Water', 'Earth']
+['Water', 'Earth', 'Fire', 'Air']
+    \end{Verbatim}
+
+    \subsubsection{Copying a list}\label{copying-a-list}
+
+    Most of the new python programmers commit this mistake. Consider the
+following,
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}45}]:} \PY{n}{lista}\PY{o}{=} \PY{p}{[}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{]}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}46}]:} \PY{n}{listb} \PY{o}{=} \PY{n}{lista}
+         \PY{k}{print} \PY{n}{listb}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[2, 1, 4, 3]
+    \end{Verbatim}
+
+    Here, We have declared a list, lista = {[}2,1,4,3{]}. This list is
+copied to listb by assigning it's value and it get's copied as seen. Now
+we perform some random operations on lista.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}47}]:} \PY{n}{lista}\PY{o}{.}\PY{n}{pop}\PY{p}{(}\PY{p}{)}
+         \PY{k}{print} \PY{n}{lista}
+         \PY{n}{lista}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{l+m+mi}{9}\PY{p}{)}
+         \PY{k}{print} \PY{n}{lista}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[2, 1, 4]
+[2, 1, 4, 9]
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}48}]:} \PY{k}{print} \PY{n}{listb}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[2, 1, 4, 9]
+    \end{Verbatim}
+
+    listb has also changed though no operation has been performed on it.
+This is because you have assigned the same memory space of lista to
+listb. So how do fix this?
+
+If you recall, in slicing we had seen that parentlist{[}a:b{]} returns a
+list from parent list with start index a and end index b and if a and b
+is not mentioned then by default it considers the first and last
+element. We use the same concept here. By doing so, we are assigning the
+data of lista to listb as a variable.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}49}]:} \PY{n}{lista} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{]}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}50}]:} \PY{n}{listb} \PY{o}{=} \PY{n}{lista}\PY{p}{[}\PY{p}{:}\PY{p}{]}
+         \PY{k}{print} \PY{n}{listb}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[2, 1, 4, 3]
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}51}]:} \PY{n}{lista}\PY{o}{.}\PY{n}{pop}\PY{p}{(}\PY{p}{)}
+         \PY{k}{print} \PY{n}{lista}
+         \PY{n}{lista}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{l+m+mi}{9}\PY{p}{)}
+         \PY{k}{print} \PY{n}{lista}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[2, 1, 4]
+[2, 1, 4, 9]
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}52}]:} \PY{k}{print} \PY{n}{listb}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[2, 1, 4, 3]
+    \end{Verbatim}
+
+    \subsection{Tuples}\label{tuples}
+
+    Tuples are similar to lists but only big difference is the elements
+inside a list can be changed but in tuple it cannot be changed. Think of
+tuples as something which has to be True for a particular something and
+cannot be True for no other values. For better understanding, Recall
+\textbf{divmod()} function.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}53}]:} \PY{n}{xyz} \PY{o}{=} \PY{n+nb}{divmod}\PY{p}{(}\PY{l+m+mi}{10}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{)}
+         \PY{k}{print} \PY{n}{xyz}
+         \PY{k}{print} \PY{n+nb}{type}\PY{p}{(}\PY{n}{xyz}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+(3, 1)
+<type 'tuple'>
+    \end{Verbatim}
+
+    Here the quotient has to be 3 and the remainder has to be 1. These
+values cannot be changed whatsoever when 10 is divided by 3. Hence
+divmod returns these values in a tuple.
+
+    To define a tuple, A variable is assigned to paranthesis ( ) or tuple(
+).
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}54}]:} \PY{n}{tup} \PY{o}{=} \PY{p}{(}\PY{p}{)}
+         \PY{n}{tup2} \PY{o}{=} \PY{n+nb}{tuple}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+    If you want to directly declare a tuple it can be done by using a comma
+at the end of the data.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}55}]:} \PY{l+m+mi}{27}\PY{p}{,}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}55}]:} (27,)
+\end{Verbatim}
+        
+    27 when multiplied by 2 yields 54, But when multiplied with a tuple the
+data is repeated twice.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}56}]:} \PY{l+m+mi}{2}\PY{o}{*}\PY{p}{(}\PY{l+m+mi}{27}\PY{p}{,}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}56}]:} (27, 27)
+\end{Verbatim}
+        
+    Values can be assigned while declaring a tuple. It takes a list as input
+and converts it into a tuple or it takes a string and converts it into a
+tuple.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}57}]:} \PY{n}{tup3} \PY{o}{=} \PY{n+nb}{tuple}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)}
+         \PY{k}{print} \PY{n}{tup3}
+         \PY{n}{tup4} \PY{o}{=} \PY{n+nb}{tuple}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Hello}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{k}{print} \PY{n}{tup4}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+(1, 2, 3)
+('H', 'e', 'l', 'l', 'o')
+    \end{Verbatim}
+
+    It follows the same indexing and slicing as Lists.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}58}]:} \PY{k}{print} \PY{n}{tup3}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{]}
+         \PY{n}{tup5} \PY{o}{=} \PY{n}{tup4}\PY{p}{[}\PY{p}{:}\PY{l+m+mi}{3}\PY{p}{]}
+         \PY{k}{print} \PY{n}{tup5}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+2
+('H', 'e', 'l')
+    \end{Verbatim}
+
+    \subsubsection{Mapping one tuple to
+another}\label{mapping-one-tuple-to-another}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}59}]:} \PY{p}{(}\PY{n}{a}\PY{p}{,}\PY{n}{b}\PY{p}{,}\PY{n}{c}\PY{p}{)}\PY{o}{=} \PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{alpha}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{beta}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{gamma}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}60}]:} \PY{k}{print} \PY{n}{a}\PY{p}{,}\PY{n}{b}\PY{p}{,}\PY{n}{c}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+alpha beta gamma
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}61}]:} \PY{n}{d} \PY{o}{=} \PY{n+nb}{tuple}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{RajathKumarMP}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{k}{print} \PY{n}{d}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+('R', 'a', 'j', 'a', 't', 'h', 'K', 'u', 'm', 'a', 'r', 'M', 'P')
+    \end{Verbatim}
+
+    \subsubsection{Built In Tuple functions}\label{built-in-tuple-functions}
+
+    \textbf{count()} function counts the number of specified element that is
+present in the tuple.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}62}]:} \PY{n}{d}\PY{o}{.}\PY{n}{count}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{a}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}62}]:} 3
+\end{Verbatim}
+        
+    \textbf{index()} function returns the index of the specified element. If
+the elements are more than one then the index of the first element of
+that specified element is returned
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}63}]:} \PY{n}{d}\PY{o}{.}\PY{n}{index}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{a}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}63}]:} 1
+\end{Verbatim}
+        
+    \subsection{Sets}\label{sets}
+
+    Sets are mainly used to eliminate repeated numbers in a sequence/list.
+It is also used to perform some standard set operations.
+
+Sets are declared as set() which will initialize a empty set. Also
+set({[}sequence{]}) can be executed to declare a set with elements
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}64}]:} \PY{n}{set1} \PY{o}{=} \PY{n+nb}{set}\PY{p}{(}\PY{p}{)}
+         \PY{k}{print} \PY{n+nb}{type}\PY{p}{(}\PY{n}{set1}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+<type 'set'>
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}65}]:} \PY{n}{set0} \PY{o}{=} \PY{n+nb}{set}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{]}\PY{p}{)}
+         \PY{k}{print} \PY{n}{set0}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+set([1, 2, 3, 4])
+    \end{Verbatim}
+
+    elements 2,3 which are repeated twice are seen only once. Thus in a set
+each element is distinct.
+
+    \subsubsection{Built-in Functions}\label{built-in-functions}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}66}]:} \PY{n}{set1} \PY{o}{=} \PY{n+nb}{set}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}67}]:} \PY{n}{set2} \PY{o}{=} \PY{n+nb}{set}\PY{p}{(}\PY{p}{[}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{]}\PY{p}{)}
+\end{Verbatim}
+
+    \textbf{union( )} function returns a set which contains all the elements
+of both the sets without repition.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}68}]:} \PY{n}{set1}\PY{o}{.}\PY{n}{union}\PY{p}{(}\PY{n}{set2}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}68}]:} \{1, 2, 3, 4, 5\}
+\end{Verbatim}
+        
+    \textbf{add( )} will add a particular element into the set. Note that
+the index of the newly added element is arbitrary and can be placed
+anywhere not neccessarily in the end.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}69}]:} \PY{n}{set1}\PY{o}{.}\PY{n}{add}\PY{p}{(}\PY{l+m+mi}{0}\PY{p}{)}
+         \PY{n}{set1}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}69}]:} \{0, 1, 2, 3\}
+\end{Verbatim}
+        
+    \textbf{intersection( )} function outputs a set which contains all the
+elements that are in both sets.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}70}]:} \PY{n}{set1}\PY{o}{.}\PY{n}{intersection}\PY{p}{(}\PY{n}{set2}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}70}]:} \{2, 3\}
+\end{Verbatim}
+        
+    \textbf{difference( )} function ouptuts a set which contains elements
+that are in set1 and not in set2.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}71}]:} \PY{n}{set1}\PY{o}{.}\PY{n}{difference}\PY{p}{(}\PY{n}{set2}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}71}]:} \{0, 1\}
+\end{Verbatim}
+        
+    \textbf{symmetric\_difference( )} function ouputs a function which
+contains elements that are in one of the sets.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}72}]:} \PY{n}{set2}\PY{o}{.}\PY{n}{symmetric\PYZus{}difference}\PY{p}{(}\PY{n}{set1}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}72}]:} \{0, 1, 4, 5\}
+\end{Verbatim}
+        
+    \textbf{issubset( ), isdisjoint( ), issuperset( )} is used to check if
+the set1/set2 is a subset, disjoint or superset of set2/set1
+respectively.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}73}]:} \PY{n}{set1}\PY{o}{.}\PY{n}{issubset}\PY{p}{(}\PY{n}{set2}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}73}]:} False
+\end{Verbatim}
+        
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}74}]:} \PY{n}{set2}\PY{o}{.}\PY{n}{isdisjoint}\PY{p}{(}\PY{n}{set1}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}74}]:} False
+\end{Verbatim}
+        
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}75}]:} \PY{n}{set2}\PY{o}{.}\PY{n}{issuperset}\PY{p}{(}\PY{n}{set1}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}75}]:} False
+\end{Verbatim}
+        
+    \textbf{pop( )} is used to remove an arbitrary element in the set
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}76}]:} \PY{n}{set1}\PY{o}{.}\PY{n}{pop}\PY{p}{(}\PY{p}{)}
+         \PY{k}{print} \PY{n}{set1}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+set([1, 2, 3])
+    \end{Verbatim}
+
+    \textbf{remove( )} function deletes the specified element from the set.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}77}]:} \PY{n}{set1}\PY{o}{.}\PY{n}{remove}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)}
+         \PY{n}{set1}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}77}]:} \{1, 3\}
+\end{Verbatim}
+        
+    \textbf{clear( )} is used to clear all the elements and make that set an
+empty set.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}78}]:} \PY{n}{set1}\PY{o}{.}\PY{n}{clear}\PY{p}{(}\PY{p}{)}
+         \PY{n}{set1}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}78}]:} set()
+\end{Verbatim}
+        
+
+    % Add a bibliography block to the postdoc
+  \newpage
+  
+  \input{04}  
+    
+    
+    \end{document}

@@ -1,0 +1,748 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+    
+    
+    \definecolor{orange}{cmyk}{0,0.4,0.8,0.2}
+    \definecolor{darkorange}{rgb}{.71,0.21,0.01}
+    \definecolor{darkgreen}{rgb}{.12,.54,.11}
+    \definecolor{myteal}{rgb}{.26, .44, .56}
+    \definecolor{gray}{gray}{0.45}
+    \definecolor{lightgray}{gray}{.95}
+    \definecolor{mediumgray}{gray}{.8}
+    \definecolor{inputbackground}{rgb}{.95, .95, .85}
+    \definecolor{outputbackground}{rgb}{.95, .95, .95}
+    \definecolor{traceback}{rgb}{1, .95, .95}
+    % ansi colors
+    \definecolor{red}{rgb}{.6,0,0}
+    \definecolor{green}{rgb}{0,.65,0}
+    \definecolor{brown}{rgb}{0.6,0.6,0}
+    \definecolor{blue}{rgb}{0,.145,.698}
+    \definecolor{purple}{rgb}{.698,.145,.698}
+    \definecolor{cyan}{rgb}{0,.698,.698}
+    \definecolor{lightgray}{gray}{0.5}
+    
+    % bright ansi colors
+    \definecolor{darkgray}{gray}{0.25}
+    \definecolor{lightred}{rgb}{1.0,0.39,0.28}
+    \definecolor{lightgreen}{rgb}{0.48,0.99,0.0}
+    \definecolor{lightblue}{rgb}{0.53,0.81,0.92}
+    \definecolor{lightpurple}{rgb}{0.87,0.63,0.87}
+    \definecolor{lightcyan}{rgb}{0.5,1.0,0.83}
+    
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatability definitions
+    \def\gt{>}
+    \def\lt{<}
+    % Document parameters
+    \title{}
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=blue,
+      linkcolor=darkorange,
+      citecolor=darkgreen,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+     
+
+    \begin{document}
+    
+    
+    \maketitle
+    
+    
+
+    
+    \section{Classes}\label{classes}
+
+    Variables, Lists, Dictionaries etc in python is a object. Without
+getting into the theory part of Object Oriented Programming, explanation
+of the concepts will be done along this tutorial.
+
+    A class is declared as follows
+
+    class class\_name:
+
+\begin{verbatim}
+Functions
+\end{verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}1}]:} \PY{k}{class} \PY{n+nc}{FirstClass}\PY{p}{:}
+            \PY{k}{pass}
+\end{Verbatim}
+
+    \textbf{pass} in python means do nothing.
+
+    Above, a class object named ``FirstClass'' is declared now consider a
+``egclass'' which has all the characteristics of ``FirstClass''. So all
+you have to do is, equate the ``egclass'' to ``FirstClass''. In python
+jargon this is called as creating an instance. ``egclass'' is the
+instance of ``FirstClass''
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}2}]:} \PY{n}{egclass} \PY{o}{=} \PY{n}{FirstClass}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{n+nb}{type}\PY{p}{(}\PY{n}{egclass}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}3}]:} instance
+\end{Verbatim}
+        
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}4}]:} \PY{n+nb}{type}\PY{p}{(}\PY{n}{FirstClass}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}4}]:} classobj
+\end{Verbatim}
+        
+    Now let us add some ``functionality'' to the class. So that our
+``FirstClass'' is defined in a better way. A function inside a class is
+called as a ``Method'' of that class
+
+    Most of the classes will have a function named ``\_\_init\_\_''. These
+are called as magic methods. In this method you basically initialize the
+variables of that class or any other initial algorithms which is
+applicable to all methods is specified in this method. A variable inside
+a class is called an attribute.
+
+    These helps simplify the process of initializing a instance. For
+example,
+
+Without the use of magic method or \_\_init\_\_ which is otherwise
+called as constructors. One had to define a \textbf{init( )} method and
+call the \textbf{init( )} function.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor} }]:} \PY{n}{eg0} \PY{o}{=} \PY{n}{FirstClass}\PY{p}{(}\PY{p}{)}
+        \PY{n}{eg0}\PY{o}{.}\PY{n}{init}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+    But when the constructor is defined the \_\_init\_\_ is called thus
+intializing the instance created.
+
+    We will make our ``FirstClass'' to accept two variables name and symbol.
+
+I will be explaining about the ``self'' in a while.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}6}]:} \PY{k}{class} \PY{n+nc}{FirstClass}\PY{p}{:}
+            \PY{k}{def} \PY{n+nf}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,}\PY{n}{name}\PY{p}{,}\PY{n}{symbol}\PY{p}{)}\PY{p}{:}
+                \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{name} \PY{o}{=} \PY{n}{name}
+                \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{symbol} \PY{o}{=} \PY{n}{symbol}
+\end{Verbatim}
+
+    Now that we have defined a function and added the \_\_init\_\_ method.
+We can create a instance of FirstClass which now accepts two arguments.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{eg1} \PY{o}{=} \PY{n}{FirstClass}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{one}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}
+        \PY{n}{eg2} \PY{o}{=} \PY{n}{FirstClass}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{two}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}8}]:} \PY{k}{print} \PY{n}{eg1}\PY{o}{.}\PY{n}{name}\PY{p}{,} \PY{n}{eg1}\PY{o}{.}\PY{n}{symbol}
+        \PY{k}{print} \PY{n}{eg2}\PY{o}{.}\PY{n}{name}\PY{p}{,} \PY{n}{eg2}\PY{o}{.}\PY{n}{symbol}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+one 1
+two 2
+    \end{Verbatim}
+
+    \textbf{dir( )} function comes very handy in looking into what the class
+contains and what all method it offers
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}9}]:} \PY{n+nb}{dir}\PY{p}{(}\PY{n}{FirstClass}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}9}]:} ['\_\_doc\_\_', '\_\_init\_\_', '\_\_module\_\_']
+\end{Verbatim}
+        
+    \textbf{dir( )} of an instance also shows it's defined attributes.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}10}]:} \PY{n+nb}{dir}\PY{p}{(}\PY{n}{eg1}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}10}]:} ['\_\_doc\_\_', '\_\_init\_\_', '\_\_module\_\_', 'name', 'symbol']
+\end{Verbatim}
+        
+    Changing the FirstClass function a bit,
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}11}]:} \PY{k}{class} \PY{n+nc}{FirstClass}\PY{p}{:}
+             \PY{k}{def} \PY{n+nf}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,}\PY{n}{name}\PY{p}{,}\PY{n}{symbol}\PY{p}{)}\PY{p}{:}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{n} \PY{o}{=} \PY{n}{name}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{s} \PY{o}{=} \PY{n}{symbol}
+\end{Verbatim}
+
+    Changing self.name and self.symbol to self.n and self.s respectively
+will yield,
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}12}]:} \PY{n}{eg1} \PY{o}{=} \PY{n}{FirstClass}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{one}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}
+         \PY{n}{eg2} \PY{o}{=} \PY{n}{FirstClass}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{two}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}13}]:} \PY{k}{print} \PY{n}{eg1}\PY{o}{.}\PY{n}{name}\PY{p}{,} \PY{n}{eg1}\PY{o}{.}\PY{n}{symbol}
+         \PY{k}{print} \PY{n}{eg2}\PY{o}{.}\PY{n}{name}\PY{p}{,} \PY{n}{eg2}\PY{o}{.}\PY{n}{symbol}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+        ---------------------------------------------------------------------------
+
+        AttributeError                            Traceback (most recent call last)
+
+        <ipython-input-13-3717d682d1cf> in <module>()
+    ----> 1 print eg1.name, eg1.symbol
+          2 print eg2.name, eg2.symbol
+
+
+        AttributeError: FirstClass instance has no attribute 'name'
+
+    \end{Verbatim}
+
+    AttributeError, Remember variables are nothing but attributes inside a
+class? So this means we have not given the correct attribute for the
+instance.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}14}]:} \PY{n+nb}{dir}\PY{p}{(}\PY{n}{eg1}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}14}]:} ['\_\_doc\_\_', '\_\_init\_\_', '\_\_module\_\_', 'n', 's']
+\end{Verbatim}
+        
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}15}]:} \PY{k}{print} \PY{n}{eg1}\PY{o}{.}\PY{n}{n}\PY{p}{,} \PY{n}{eg1}\PY{o}{.}\PY{n}{s}
+         \PY{k}{print} \PY{n}{eg2}\PY{o}{.}\PY{n}{n}\PY{p}{,} \PY{n}{eg2}\PY{o}{.}\PY{n}{s}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+one 1
+two 2
+    \end{Verbatim}
+
+    So now we have solved the error. Now let us compare the two examples
+that we saw.
+
+When I declared self.name and self.symbol, there was no attribute error
+for eg1.name and eg1.symbol and when I declared self.n and self.s, there
+was no attribute error for eg1.n and eg1.s
+
+From the above we can conclude that self is nothing but the instance
+itself.
+
+Remember, self is not predefined it is userdefined. You can make use of
+anything you are comfortable with. But it has become a common practice
+to use self.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}16}]:} \PY{k}{class} \PY{n+nc}{FirstClass}\PY{p}{:}
+             \PY{k}{def} \PY{n+nf}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n}{asdf1234}\PY{p}{,}\PY{n}{name}\PY{p}{,}\PY{n}{symbol}\PY{p}{)}\PY{p}{:}
+                 \PY{n}{asdf1234}\PY{o}{.}\PY{n}{n} \PY{o}{=} \PY{n}{name}
+                 \PY{n}{asdf1234}\PY{o}{.}\PY{n}{s} \PY{o}{=} \PY{n}{symbol}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}17}]:} \PY{n}{eg1} \PY{o}{=} \PY{n}{FirstClass}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{one}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}
+         \PY{n}{eg2} \PY{o}{=} \PY{n}{FirstClass}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{two}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}18}]:} \PY{k}{print} \PY{n}{eg1}\PY{o}{.}\PY{n}{n}\PY{p}{,} \PY{n}{eg1}\PY{o}{.}\PY{n}{s}
+         \PY{k}{print} \PY{n}{eg2}\PY{o}{.}\PY{n}{n}\PY{p}{,} \PY{n}{eg2}\PY{o}{.}\PY{n}{s}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+one 1
+two 2
+    \end{Verbatim}
+
+    Since eg1 and eg2 are instances of FirstClass it need not necessarily be
+limited to FirstClass itself. It might extend itself by declaring other
+attributes without having the attribute to be declared inside the
+FirstClass.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}19}]:} \PY{n}{eg1}\PY{o}{.}\PY{n}{cube} \PY{o}{=} \PY{l+m+mi}{1}
+         \PY{n}{eg2}\PY{o}{.}\PY{n}{cube} \PY{o}{=} \PY{l+m+mi}{8}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}20}]:} \PY{n+nb}{dir}\PY{p}{(}\PY{n}{eg1}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}20}]:} ['\_\_doc\_\_', '\_\_init\_\_', '\_\_module\_\_', 'cube', 'n', 's']
+\end{Verbatim}
+        
+    Just like global and local variables as we saw earlier, even classes
+have it's own types of variables.
+
+Class Attribute : attributes defined outside the method and is
+applicable to all the instances.
+
+Instance Attribute : attributes defined inside a method and is
+applicable to only that method and is unique to each instance.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}21}]:} \PY{k}{class} \PY{n+nc}{FirstClass}\PY{p}{:}
+             \PY{n}{test} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{test}\PY{l+s}{\PYZsq{}}
+             \PY{k}{def} \PY{n+nf}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,}\PY{n}{name}\PY{p}{,}\PY{n}{symbol}\PY{p}{)}\PY{p}{:}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{name} \PY{o}{=} \PY{n}{name}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{symbol} \PY{o}{=} \PY{n}{symbol}
+\end{Verbatim}
+
+    Here test is a class attribute and name is a instance attribute.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}22}]:} \PY{n}{eg3} \PY{o}{=} \PY{n}{FirstClass}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Three}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}23}]:} \PY{k}{print} \PY{n}{eg3}\PY{o}{.}\PY{n}{test}\PY{p}{,} \PY{n}{eg3}\PY{o}{.}\PY{n}{name}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+test Three
+    \end{Verbatim}
+
+    Let us add some more methods to FirstClass.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}24}]:} \PY{k}{class} \PY{n+nc}{FirstClass}\PY{p}{:}
+             \PY{k}{def} \PY{n+nf}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,}\PY{n}{name}\PY{p}{,}\PY{n}{symbol}\PY{p}{)}\PY{p}{:}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{name} \PY{o}{=} \PY{n}{name}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{symbol} \PY{o}{=} \PY{n}{symbol}
+             \PY{k}{def} \PY{n+nf}{square}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+                 \PY{k}{return} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{symbol} \PY{o}{*} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{symbol}
+             \PY{k}{def} \PY{n+nf}{cube}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+                 \PY{k}{return} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{symbol} \PY{o}{*} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{symbol} \PY{o}{*} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{symbol}
+             \PY{k}{def} \PY{n+nf}{multiply}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{x}\PY{p}{)}\PY{p}{:}
+                 \PY{k}{return} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{symbol} \PY{o}{*} \PY{n}{x}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}25}]:} \PY{n}{eg4} \PY{o}{=} \PY{n}{FirstClass}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Five}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}26}]:} \PY{k}{print} \PY{n}{eg4}\PY{o}{.}\PY{n}{square}\PY{p}{(}\PY{p}{)}
+         \PY{k}{print} \PY{n}{eg4}\PY{o}{.}\PY{n}{cube}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+25
+125
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}27}]:} \PY{n}{eg4}\PY{o}{.}\PY{n}{multiply}\PY{p}{(}\PY{l+m+mi}{2}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}27}]:} 10
+\end{Verbatim}
+        
+    The above can also be written as,
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}28}]:} \PY{n}{FirstClass}\PY{o}{.}\PY{n}{multiply}\PY{p}{(}\PY{n}{eg4}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}28}]:} 10
+\end{Verbatim}
+        
+    \subsection{Inheritance}\label{inheritance}
+
+    There might be cases where a new class would have all the previous
+characteristics of an already defined class. So the new class can
+``inherit'' the previous class and add it's own methods to it. This is
+called as inheritance.
+
+    Consider class SoftwareEngineer which has a method salary.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}29}]:} \PY{k}{class} \PY{n+nc}{SoftwareEngineer}\PY{p}{:}
+             \PY{k}{def} \PY{n+nf}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,}\PY{n}{name}\PY{p}{,}\PY{n}{age}\PY{p}{)}\PY{p}{:}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{name} \PY{o}{=} \PY{n}{name}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{age} \PY{o}{=} \PY{n}{age}
+             \PY{k}{def} \PY{n+nf}{salary}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{value}\PY{p}{)}\PY{p}{:}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{money} \PY{o}{=} \PY{n}{value}
+                 \PY{k}{print} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{name}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{earns}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{money}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}30}]:} \PY{n}{a} \PY{o}{=} \PY{n}{SoftwareEngineer}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Kartik}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+m+mi}{26}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}31}]:} \PY{n}{a}\PY{o}{.}\PY{n}{salary}\PY{p}{(}\PY{l+m+mi}{40000}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Kartik earns 40000
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}32}]:} \PY{n+nb}{dir}\PY{p}{(}\PY{n}{SoftwareEngineer}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}32}]:} ['\_\_doc\_\_', '\_\_init\_\_', '\_\_module\_\_', 'salary']
+\end{Verbatim}
+        
+    Now consider another class Artist which tells us about the amount of
+money an artist earns and his artform.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}33}]:} \PY{k}{class} \PY{n+nc}{Artist}\PY{p}{:}
+             \PY{k}{def} \PY{n+nf}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,}\PY{n}{name}\PY{p}{,}\PY{n}{age}\PY{p}{)}\PY{p}{:}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{name} \PY{o}{=} \PY{n}{name}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{age} \PY{o}{=} \PY{n}{age}
+             \PY{k}{def} \PY{n+nf}{money}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,}\PY{n}{value}\PY{p}{)}\PY{p}{:}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{money} \PY{o}{=} \PY{n}{value}
+                 \PY{k}{print} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{name}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{earns}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{money}
+             \PY{k}{def} \PY{n+nf}{artform}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{job}\PY{p}{)}\PY{p}{:}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{job} \PY{o}{=} \PY{n}{job}
+                 \PY{k}{print} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{name}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{is a}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{job}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}34}]:} \PY{n}{b} \PY{o}{=} \PY{n}{Artist}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Nitin}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+m+mi}{20}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}35}]:} \PY{n}{b}\PY{o}{.}\PY{n}{money}\PY{p}{(}\PY{l+m+mi}{50000}\PY{p}{)}
+         \PY{n}{b}\PY{o}{.}\PY{n}{artform}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Musician}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Nitin earns 50000
+Nitin is a Musician
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}36}]:} \PY{n+nb}{dir}\PY{p}{(}\PY{n}{Artist}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}36}]:} ['\_\_doc\_\_', '\_\_init\_\_', '\_\_module\_\_', 'artform', 'money']
+\end{Verbatim}
+        
+    money method and salary method are the same. So we can generalize the
+method to salary and inherit the SoftwareEngineer class to Artist class.
+Now the artist class becomes,
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}37}]:} \PY{k}{class} \PY{n+nc}{Artist}\PY{p}{(}\PY{n}{SoftwareEngineer}\PY{p}{)}\PY{p}{:}
+             \PY{k}{def} \PY{n+nf}{artform}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{job}\PY{p}{)}\PY{p}{:}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{job} \PY{o}{=} \PY{n}{job}
+                 \PY{k}{print} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{name}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{is a}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{job}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}38}]:} \PY{n}{c} \PY{o}{=} \PY{n}{Artist}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Nishanth}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+m+mi}{21}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}39}]:} \PY{n+nb}{dir}\PY{p}{(}\PY{n}{Artist}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}39}]:} ['\_\_doc\_\_', '\_\_init\_\_', '\_\_module\_\_', 'artform', 'salary']
+\end{Verbatim}
+        
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}40}]:} \PY{n}{c}\PY{o}{.}\PY{n}{salary}\PY{p}{(}\PY{l+m+mi}{60000}\PY{p}{)}
+         \PY{n}{c}\PY{o}{.}\PY{n}{artform}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Dancer}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Nishanth earns 60000
+Nishanth is a Dancer
+    \end{Verbatim}
+
+    Suppose say while inheriting a particular method is not suitable for the
+new class. One can override this method by defining again that method
+with the same name inside the new class.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}41}]:} \PY{k}{class} \PY{n+nc}{Artist}\PY{p}{(}\PY{n}{SoftwareEngineer}\PY{p}{)}\PY{p}{:}
+             \PY{k}{def} \PY{n+nf}{artform}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{job}\PY{p}{)}\PY{p}{:}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{job} \PY{o}{=} \PY{n}{job}
+                 \PY{k}{print} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{name}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{is a}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{job}
+             \PY{k}{def} \PY{n+nf}{salary}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{value}\PY{p}{)}\PY{p}{:}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{money} \PY{o}{=} \PY{n}{value}
+                 \PY{k}{print} \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{name}\PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{earns}\PY{l+s}{\PYZdq{}}\PY{p}{,}\PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{money}
+                 \PY{k}{print} \PY{l+s}{\PYZdq{}}\PY{l+s}{I am overriding the SoftwareEngineer class}\PY{l+s}{\PYZsq{}}\PY{l+s}{s salary method}\PY{l+s}{\PYZdq{}}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}42}]:} \PY{n}{c} \PY{o}{=} \PY{n}{Artist}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Nishanth}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+m+mi}{21}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}43}]:} \PY{n}{c}\PY{o}{.}\PY{n}{salary}\PY{p}{(}\PY{l+m+mi}{60000}\PY{p}{)}
+         \PY{n}{c}\PY{o}{.}\PY{n}{artform}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Dancer}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Nishanth earns 60000
+I am overriding the SoftwareEngineer class's salary method
+Nishanth is a Dancer
+    \end{Verbatim}
+
+    If not sure how many times methods will be called it will become
+difficult to declare so many variables to carry each result hence it is
+better to declare a list and append the result.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}44}]:} \PY{k}{class} \PY{n+nc}{emptylist}\PY{p}{:}
+             \PY{k}{def} \PY{n+nf}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{)}\PY{p}{:}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{data} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+             \PY{k}{def} \PY{n+nf}{one}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,}\PY{n}{x}\PY{p}{)}\PY{p}{:}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{data}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{x}\PY{p}{)}
+             \PY{k}{def} \PY{n+nf}{two}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{x} \PY{p}{)}\PY{p}{:}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{data}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{x}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{2}\PY{p}{)}
+             \PY{k}{def} \PY{n+nf}{three}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{n}{x}\PY{p}{)}\PY{p}{:}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{data}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{x}\PY{o}{*}\PY{o}{*}\PY{l+m+mi}{3}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}45}]:} \PY{n}{xc} \PY{o}{=} \PY{n}{emptylist}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}46}]:} \PY{n}{xc}\PY{o}{.}\PY{n}{one}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}
+         \PY{k}{print} \PY{n}{xc}\PY{o}{.}\PY{n}{data}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[1]
+    \end{Verbatim}
+
+    Since xc.data is a list direct list operations can also be performed.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}47}]:} \PY{n}{xc}\PY{o}{.}\PY{n}{data}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{l+m+mi}{8}\PY{p}{)}
+         \PY{k}{print} \PY{n}{xc}\PY{o}{.}\PY{n}{data}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[1, 8]
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}48}]:} \PY{n}{xc}\PY{o}{.}\PY{n}{two}\PY{p}{(}\PY{l+m+mi}{3}\PY{p}{)}
+         \PY{k}{print} \PY{n}{xc}\PY{o}{.}\PY{n}{data}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[1, 8, 9]
+    \end{Verbatim}
+
+    If the number of input arguments varies from instance to instance
+asterisk can be used as shown.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}49}]:} \PY{k}{class} \PY{n+nc}{NotSure}\PY{p}{:}
+             \PY{k}{def} \PY{n+nf}{\PYZus{}\PYZus{}init\PYZus{}\PYZus{}}\PY{p}{(}\PY{n+nb+bp}{self}\PY{p}{,} \PY{o}{*}\PY{n}{args}\PY{p}{)}\PY{p}{:}
+                 \PY{n+nb+bp}{self}\PY{o}{.}\PY{n}{data} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZsq{}}\PY{o}{.}\PY{n}{join}\PY{p}{(}\PY{n+nb}{list}\PY{p}{(}\PY{n}{args}\PY{p}{)}\PY{p}{)} 
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}50}]:} \PY{n}{yz} \PY{o}{=} \PY{n}{NotSure}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{I}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Do}\PY{l+s}{\PYZsq{}} \PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Not}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Know}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{What}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{To}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{Type}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}51}]:} \PY{n}{yz}\PY{o}{.}\PY{n}{data}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}51}]:} 'IDoNotKnowWhatToType'
+\end{Verbatim}
+        
+    \section{Where to go from here?}\label{where-to-go-from-here}
+
+    Practice alone can help you get the hang of python. Give your self
+problem statements and solve them. You can also sign up to any
+competitive coding platform for problem statements. The more you code
+the more you discover and the more you start appreciating the language.
+
+Now that you have been introduced to python, You can try out the
+different python libraries in the field of your interest. I highly
+recommend you to check out this curated list of Python frameworks,
+libraries and software http://awesome-python.com
+
+The official python documentation : https://docs.python.org/2/
+
+Enjoy solving problem statements because life is short, you need python!
+
+Peace.
+
+Rajath Kumar M.P ( rajathkumar dot exe at gmail dot com)
+
+
+    % Add a bibliography block to the postdoc
+    
+    
+    
+    \end{document}

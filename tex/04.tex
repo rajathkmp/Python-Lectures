@@ -1,0 +1,731 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+    
+    
+    \definecolor{orange}{cmyk}{0,0.4,0.8,0.2}
+    \definecolor{darkorange}{rgb}{.71,0.21,0.01}
+    \definecolor{darkgreen}{rgb}{.12,.54,.11}
+    \definecolor{myteal}{rgb}{.26, .44, .56}
+    \definecolor{gray}{gray}{0.45}
+    \definecolor{lightgray}{gray}{.95}
+    \definecolor{mediumgray}{gray}{.8}
+    \definecolor{inputbackground}{rgb}{.95, .95, .85}
+    \definecolor{outputbackground}{rgb}{.95, .95, .95}
+    \definecolor{traceback}{rgb}{1, .95, .95}
+    % ansi colors
+    \definecolor{red}{rgb}{.6,0,0}
+    \definecolor{green}{rgb}{0,.65,0}
+    \definecolor{brown}{rgb}{0.6,0.6,0}
+    \definecolor{blue}{rgb}{0,.145,.698}
+    \definecolor{purple}{rgb}{.698,.145,.698}
+    \definecolor{cyan}{rgb}{0,.698,.698}
+    \definecolor{lightgray}{gray}{0.5}
+    
+    % bright ansi colors
+    \definecolor{darkgray}{gray}{0.25}
+    \definecolor{lightred}{rgb}{1.0,0.39,0.28}
+    \definecolor{lightgreen}{rgb}{0.48,0.99,0.0}
+    \definecolor{lightblue}{rgb}{0.53,0.81,0.92}
+    \definecolor{lightpurple}{rgb}{0.87,0.63,0.87}
+    \definecolor{lightcyan}{rgb}{0.5,1.0,0.83}
+    
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatability definitions
+    \def\gt{>}
+    \def\lt{<}
+    % Document parameters
+    \title{}
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=blue,
+      linkcolor=darkorange,
+      citecolor=darkgreen,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+     
+
+    \begin{document}
+    
+    
+    \maketitle
+    
+    
+
+    
+    \subsection{Strings}\label{strings}
+
+    Strings are ordered text based data which are represented by enclosing
+the same in single/double/triple quotes.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}1}]:} \PY{n}{String0} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{Taj Mahal is beautiful}\PY{l+s}{\PYZsq{}}
+        \PY{n}{String1} \PY{o}{=} \PY{l+s}{\PYZdq{}}\PY{l+s}{Taj Mahal is beautiful}\PY{l+s}{\PYZdq{}}
+        \PY{n}{String2} \PY{o}{=} \PY{l+s}{\PYZsq{}\PYZsq{}\PYZsq{}}\PY{l+s}{Taj Mahal}
+        \PY{l+s}{is}
+        \PY{l+s}{beautiful}\PY{l+s}{\PYZsq{}\PYZsq{}\PYZsq{}}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}2}]:} \PY{k}{print} \PY{n}{String0} \PY{p}{,} \PY{n+nb}{type}\PY{p}{(}\PY{n}{String0}\PY{p}{)}
+        \PY{k}{print} \PY{n}{String1}\PY{p}{,} \PY{n+nb}{type}\PY{p}{(}\PY{n}{String1}\PY{p}{)}
+        \PY{k}{print} \PY{n}{String2}\PY{p}{,} \PY{n+nb}{type}\PY{p}{(}\PY{n}{String2}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Taj Mahal is beautiful <type 'str'>
+Taj Mahal is beautiful <type 'str'>
+Taj Mahal
+is
+beautiful <type 'str'>
+    \end{Verbatim}
+
+    String Indexing and Slicing are similar to Lists which was explained in
+detail earlier.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{k}{print} \PY{n}{String0}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{]}
+        \PY{k}{print} \PY{n}{String0}\PY{p}{[}\PY{l+m+mi}{4}\PY{p}{:}\PY{p}{]}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+M
+Mahal is beautiful
+    \end{Verbatim}
+
+    \subsubsection{Built-in Functions}\label{built-in-functions}
+
+    \textbf{find( )} function returns the index value of the given data that
+is to found in the string. If it is not found it returns \textbf{-1}.
+Remember to not confuse the returned -1 for reverse indexing value.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}4}]:} \PY{k}{print} \PY{n}{String0}\PY{o}{.}\PY{n}{find}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{al}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+        \PY{k}{print} \PY{n}{String0}\PY{o}{.}\PY{n}{find}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{am}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+7
+-1
+    \end{Verbatim}
+
+    The index value returned is the index of the first element in the input
+data.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}5}]:} \PY{k}{print} \PY{n}{String0}\PY{p}{[}\PY{l+m+mi}{7}\PY{p}{]}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+a
+    \end{Verbatim}
+
+    One can also input \textbf{find( )} function between which index values
+it has to search.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}6}]:} \PY{k}{print} \PY{n}{String0}\PY{o}{.}\PY{n}{find}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{j}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{)}
+        \PY{k}{print} \PY{n}{String0}\PY{o}{.}\PY{n}{find}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{j}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+2
+2
+    \end{Verbatim}
+
+    \textbf{capitalize( )} is used to capitalize the first element in the
+string.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}7}]:} \PY{n}{String3} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{observe the first letter in this sentence.}\PY{l+s}{\PYZsq{}}
+        \PY{k}{print} \PY{n}{String3}\PY{o}{.}\PY{n}{capitalize}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Observe the first letter in this sentence.
+    \end{Verbatim}
+
+    \textbf{center( )} is used to center align the string by specifying the
+field width.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}8}]:} \PY{n}{String0}\PY{o}{.}\PY{n}{center}\PY{p}{(}\PY{l+m+mi}{70}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}8}]:} '                        Taj Mahal is beautiful                        '
+\end{Verbatim}
+        
+    One can also fill the left out spaces with any other character.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}9}]:} \PY{n}{String0}\PY{o}{.}\PY{n}{center}\PY{p}{(}\PY{l+m+mi}{70}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZhy{}}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}9}]:} '------------------------Taj Mahal is beautiful------------------------'
+\end{Verbatim}
+        
+    \textbf{zfill( )} is used for zero padding by specifying the field
+width.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}10}]:} \PY{n}{String0}\PY{o}{.}\PY{n}{zfill}\PY{p}{(}\PY{l+m+mi}{30}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}10}]:} '00000000Taj Mahal is beautiful'
+\end{Verbatim}
+        
+    \textbf{expandtabs( )} allows you to change the spacing of the tab
+character. `\t' which is by default set to 8 spaces.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}11}]:} \PY{n}{s} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{h}\PY{l+s+se}{\PYZbs{}t}\PY{l+s}{e}\PY{l+s+se}{\PYZbs{}t}\PY{l+s}{l}\PY{l+s+se}{\PYZbs{}t}\PY{l+s}{l}\PY{l+s+se}{\PYZbs{}t}\PY{l+s}{o}\PY{l+s}{\PYZsq{}}
+         \PY{k}{print} \PY{n}{s}
+         \PY{k}{print} \PY{n}{s}\PY{o}{.}\PY{n}{expandtabs}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{)}
+         \PY{k}{print} \PY{n}{s}\PY{o}{.}\PY{n}{expandtabs}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+h	e	l	l	o
+h e l l o
+h       e       l       l       o
+    \end{Verbatim}
+
+    \textbf{index( )} works the same way as \textbf{find( )} function the
+only difference is find returns `-1' when the input element is not found
+in the string but \textbf{index( )} function throws a ValueError
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}12}]:} \PY{k}{print} \PY{n}{String0}\PY{o}{.}\PY{n}{index}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Taj}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{k}{print} \PY{n}{String0}\PY{o}{.}\PY{n}{index}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Mahal}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}
+         \PY{k}{print} \PY{n}{String0}\PY{o}{.}\PY{n}{index}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Mahal}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{,}\PY{l+m+mi}{20}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+0
+4
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+        ---------------------------------------------------------------------------
+
+        ValueError                                Traceback (most recent call last)
+
+        <ipython-input-12-6062e7a32deb> in <module>()
+          1 print String0.index('Taj')
+          2 print String0.index('Mahal',0)
+    ----> 3 print String0.index('Mahal',10,20)
+    
+
+        ValueError: substring not found
+
+    \end{Verbatim}
+
+    \textbf{endswith( )} function is used to check if the given string ends
+with the particular char which is given as input.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}13}]:} \PY{k}{print} \PY{n}{String0}\PY{o}{.}\PY{n}{endswith}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{y}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+False
+    \end{Verbatim}
+
+    The start and stop index values can also be specified.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}14}]:} \PY{k}{print} \PY{n}{String0}\PY{o}{.}\PY{n}{endswith}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{l}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}
+         \PY{k}{print} \PY{n}{String0}\PY{o}{.}\PY{n}{endswith}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{M}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+True
+True
+    \end{Verbatim}
+
+    \textbf{count( )} function counts the number of char in the given
+string. The start and the stop index can also be specified or left
+blank. (These are Implicit arguments which will be dealt in functions)
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}15}]:} \PY{k}{print} \PY{n}{String0}\PY{o}{.}\PY{n}{count}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{a}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+m+mi}{0}\PY{p}{)}
+         \PY{k}{print} \PY{n}{String0}\PY{o}{.}\PY{n}{count}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{a}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{10}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+4
+2
+    \end{Verbatim}
+
+    \textbf{join( )} function is used add a char in between the elements of
+the input string.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}16}]:} \PY{l+s}{\PYZsq{}}\PY{l+s}{a}\PY{l+s}{\PYZsq{}}\PY{o}{.}\PY{n}{join}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{*\PYZus{}\PYZhy{}}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}16}]:} '*a\_a-'
+\end{Verbatim}
+        
+    '*\_-`is the input string and char 'a' is added in between each element
+
+    \textbf{join( )} function can also be used to convert a list into a
+string.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}17}]:} \PY{n}{a} \PY{o}{=} \PY{n+nb}{list}\PY{p}{(}\PY{n}{String0}\PY{p}{)}
+         \PY{k}{print} \PY{n}{a}
+         \PY{n}{b} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{\PYZsq{}}\PY{o}{.}\PY{n}{join}\PY{p}{(}\PY{n}{a}\PY{p}{)}
+         \PY{k}{print} \PY{n}{b}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+['T', 'a', 'j', ' ', 'M', 'a', 'h', 'a', 'l', ' ', 'i', 's', ' ', 'b', 'e', 'a', 'u', 't', 'i', 'f', 'u', 'l']
+Taj Mahal is beautiful
+    \end{Verbatim}
+
+    Before converting it into a string \textbf{join( )} function can be used
+to insert any char in between the list elements.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}18}]:} \PY{n}{c} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{/}\PY{l+s}{\PYZsq{}}\PY{o}{.}\PY{n}{join}\PY{p}{(}\PY{n}{a}\PY{p}{)}\PY{p}{[}\PY{l+m+mi}{18}\PY{p}{:}\PY{p}{]}
+         \PY{k}{print} \PY{n}{c}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+/i/s/ /b/e/a/u/t/i/f/u/l
+    \end{Verbatim}
+
+    \textbf{split( )} function is used to convert a string back to a list.
+Think of it as the opposite of the \textbf{join()} function.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}19}]:} \PY{n}{d} \PY{o}{=} \PY{n}{c}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{/}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{k}{print} \PY{n}{d}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[' ', 'i', 's', ' ', 'b', 'e', 'a', 'u', 't', 'i', 'f', 'u', 'l']
+    \end{Verbatim}
+
+    In \textbf{split( )} function one can also specify the number of times
+you want to split the string or the number of elements the new returned
+list should conatin. The number of elements is always one more than the
+specified number this is because it is split the number of times
+specified.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}20}]:} \PY{n}{e} \PY{o}{=} \PY{n}{c}\PY{o}{.}\PY{n}{split}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{/}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{)}
+         \PY{k}{print} \PY{n}{e}
+         \PY{k}{print} \PY{n+nb}{len}\PY{p}{(}\PY{n}{e}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[' ', 'i', 's', ' /b/e/a/u/t/i/f/u/l']
+4
+    \end{Verbatim}
+
+    \textbf{lower( )} converts any capital letter to small letter.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}21}]:} \PY{k}{print} \PY{n}{String0}
+         \PY{k}{print} \PY{n}{String0}\PY{o}{.}\PY{n}{lower}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Taj Mahal is beautiful
+taj mahal is beautiful
+    \end{Verbatim}
+
+    \textbf{upper( )} converts any small letter to capital letter.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}22}]:} \PY{n}{String0}\PY{o}{.}\PY{n}{upper}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}22}]:} 'TAJ MAHAL IS BEAUTIFUL'
+\end{Verbatim}
+        
+    \textbf{replace( )} function replaces the element with another element.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}23}]:} \PY{n}{String0}\PY{o}{.}\PY{n}{replace}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Taj Mahal}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s}{Bengaluru}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}23}]:} 'Bengaluru is beautiful'
+\end{Verbatim}
+        
+    \textbf{strip( )} function is used to delete elements from the right end
+and the left end which is not required.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}24}]:} \PY{n}{f} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{    hello      }\PY{l+s}{\PYZsq{}}
+\end{Verbatim}
+
+    If no char is specified then it will delete all the spaces that is
+present in the right and left hand side of the data.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}25}]:} \PY{n}{f}\PY{o}{.}\PY{n}{strip}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}25}]:} 'hello'
+\end{Verbatim}
+        
+    \textbf{strip( )} function, when a char is specified then it deletes
+that char if it is present in the two ends of the specified string.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}26}]:} \PY{n}{f} \PY{o}{=} \PY{l+s}{\PYZsq{}}\PY{l+s}{   ***\PYZhy{}\PYZhy{}\PYZhy{}\PYZhy{}hello\PYZhy{}\PYZhy{}\PYZhy{}*******     }\PY{l+s}{\PYZsq{}}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}27}]:} \PY{n}{f}\PY{o}{.}\PY{n}{strip}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{*}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}27}]:} '   ***----hello---*******     '
+\end{Verbatim}
+        
+    The asterisk had to be deleted but is not. This is because there is a
+space in both the right and left hand side. So in strip function. The
+characters need to be inputted in the specific order in which they are
+present.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}28}]:} \PY{k}{print} \PY{n}{f}\PY{o}{.}\PY{n}{strip}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{ *}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{k}{print} \PY{n}{f}\PY{o}{.}\PY{n}{strip}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{ *\PYZhy{}}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+----hello---
+hello
+    \end{Verbatim}
+
+    \textbf{lstrip( )} and \textbf{rstrip( )} function have the same
+functionality as strip function but the only difference is
+\textbf{lstrip( )} deletes only towards the left side and
+\textbf{rstrip( )} towards the right.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}29}]:} \PY{k}{print} \PY{n}{f}\PY{o}{.}\PY{n}{lstrip}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{ *}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{k}{print} \PY{n}{f}\PY{o}{.}\PY{n}{rstrip}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{ *}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+----hello---*******     
+   ***----hello---
+    \end{Verbatim}
+
+    \subsection{Dictionaries}\label{dictionaries}
+
+    Dictionaries are more used like a database because here you can index a
+particular sequence with your user defined string.
+
+    To define a dictionary, equate a variable to \{ \} or dict()
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}30}]:} \PY{n}{d0} \PY{o}{=} \PY{p}{\PYZob{}}\PY{p}{\PYZcb{}}
+         \PY{n}{d1} \PY{o}{=} \PY{n+nb}{dict}\PY{p}{(}\PY{p}{)}
+         \PY{k}{print} \PY{n+nb}{type}\PY{p}{(}\PY{n}{d0}\PY{p}{)}\PY{p}{,} \PY{n+nb}{type}\PY{p}{(}\PY{n}{d1}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+<type 'dict'> <type 'dict'>
+    \end{Verbatim}
+
+    Dictionary works somewhat like a list but with an added capability of
+assigning it's own index style.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}31}]:} \PY{n}{d0}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{One}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{l+m+mi}{1}
+         \PY{n}{d0}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{OneTwo}\PY{l+s}{\PYZsq{}}\PY{p}{]} \PY{o}{=} \PY{l+m+mi}{12} 
+         \PY{k}{print} \PY{n}{d0}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+\{'OneTwo': 12, 'One': 1\}
+    \end{Verbatim}
+
+    That is how a dictionary looks like. Now you are able to access `1' by
+the index value set at `One'
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}32}]:} \PY{k}{print} \PY{n}{d0}\PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{One}\PY{l+s}{\PYZsq{}}\PY{p}{]}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+1
+    \end{Verbatim}
+
+    Two lists which are related can be merged to form a dictionary.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}33}]:} \PY{n}{names} \PY{o}{=} \PY{p}{[}\PY{l+s}{\PYZsq{}}\PY{l+s}{One}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Two}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Three}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Four}\PY{l+s}{\PYZsq{}}\PY{p}{,} \PY{l+s}{\PYZsq{}}\PY{l+s}{Five}\PY{l+s}{\PYZsq{}}\PY{p}{]}
+         \PY{n}{numbers} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,} \PY{l+m+mi}{2}\PY{p}{,} \PY{l+m+mi}{3}\PY{p}{,} \PY{l+m+mi}{4}\PY{p}{,} \PY{l+m+mi}{5}\PY{p}{]}
+\end{Verbatim}
+
+    \textbf{zip( )} function is used to combine two lists
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}34}]:} \PY{n}{d2} \PY{o}{=} \PY{n+nb}{zip}\PY{p}{(}\PY{n}{names}\PY{p}{,}\PY{n}{numbers}\PY{p}{)}
+         \PY{k}{print} \PY{n}{d2}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[('One', 1), ('Two', 2), ('Three', 3), ('Four', 4), ('Five', 5)]
+    \end{Verbatim}
+
+    The two lists are combined to form a single list and each elements are
+clubbed with their respective elements from the other list inside a
+tuple. Tuples because that is what is assigned and the value should not
+change.
+
+Further, To convert the above into a dictionary. \textbf{dict( )}
+function is used.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}35}]:} \PY{n}{a1} \PY{o}{=} \PY{n+nb}{dict}\PY{p}{(}\PY{n}{d2}\PY{p}{)}
+         \PY{k}{print} \PY{n}{a1}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+\{'Four': 4, 'Five': 5, 'Three': 3, 'Two': 2, 'One': 1\}
+    \end{Verbatim}
+
+    \subsubsection{Built-in Functions}\label{built-in-functions}
+
+    \textbf{clear( )} function is used to erase the entire database that was
+created.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}36}]:} \PY{n}{a1}\PY{o}{.}\PY{n}{clear}\PY{p}{(}\PY{p}{)}
+         \PY{k}{print} \PY{n}{a1}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+\{\}
+    \end{Verbatim}
+
+    Dictionary can also be built using loops.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}37}]:} \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n+nb}{range}\PY{p}{(}\PY{n+nb}{len}\PY{p}{(}\PY{n}{names}\PY{p}{)}\PY{p}{)}\PY{p}{:}
+             \PY{n}{a1}\PY{p}{[}\PY{n}{names}\PY{p}{[}\PY{n}{i}\PY{p}{]}\PY{p}{]} \PY{o}{=} \PY{n}{numbers}\PY{p}{[}\PY{n}{i}\PY{p}{]}
+         \PY{k}{print} \PY{n}{a1}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+\{'Four': 4, 'Five': 5, 'Three': 3, 'Two': 2, 'One': 1\}
+    \end{Verbatim}
+
+    \textbf{values( )} function returns a list with all the assigned values
+in the dictionary.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}38}]:} \PY{n}{a1}\PY{o}{.}\PY{n}{values}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}38}]:} [4, 5, 3, 2, 1]
+\end{Verbatim}
+        
+    \textbf{keys( )} function returns all the index or the keys to which
+contains the values that it was assigned to.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}39}]:} \PY{n}{a1}\PY{o}{.}\PY{n}{keys}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}39}]:} ['Four', 'Five', 'Three', 'Two', 'One']
+\end{Verbatim}
+        
+    \textbf{items( )} is returns a list containing both the list but each
+element in the dictionary is inside a tuple. This is same as the result
+that was obtained when zip function was used.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}40}]:} \PY{n}{a1}\PY{o}{.}\PY{n}{items}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}40}]:} [('Four', 4), ('Five', 5), ('Three', 3), ('Two', 2), ('One', 1)]
+\end{Verbatim}
+        
+    \textbf{pop( )} function is used to get the remove that particular
+element and this removed element can be assigned to a new variable. But
+remember only the value is stored and not the key. Because the is just a
+index value.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}41}]:} \PY{n}{a2} \PY{o}{=} \PY{n}{a1}\PY{o}{.}\PY{n}{pop}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Four}\PY{l+s}{\PYZsq{}}\PY{p}{)}
+         \PY{k}{print} \PY{n}{a1}
+         \PY{k}{print} \PY{n}{a2}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+\{'Five': 5, 'Three': 3, 'Two': 2, 'One': 1\}
+4
+    \end{Verbatim}
+
+
+    % Add a bibliography block to the postdoc
+    
+  \newpage
+  
+  \input{05}  
+    
+    \end{document}

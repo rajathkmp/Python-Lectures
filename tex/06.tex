@@ -1,0 +1,697 @@
+
+% Default to the notebook output style
+
+    
+
+
+% Inherit from the specified cell style.
+
+
+
+
+    
+    
+    
+    \definecolor{orange}{cmyk}{0,0.4,0.8,0.2}
+    \definecolor{darkorange}{rgb}{.71,0.21,0.01}
+    \definecolor{darkgreen}{rgb}{.12,.54,.11}
+    \definecolor{myteal}{rgb}{.26, .44, .56}
+    \definecolor{gray}{gray}{0.45}
+    \definecolor{lightgray}{gray}{.95}
+    \definecolor{mediumgray}{gray}{.8}
+    \definecolor{inputbackground}{rgb}{.95, .95, .85}
+    \definecolor{outputbackground}{rgb}{.95, .95, .95}
+    \definecolor{traceback}{rgb}{1, .95, .95}
+    % ansi colors
+    \definecolor{red}{rgb}{.6,0,0}
+    \definecolor{green}{rgb}{0,.65,0}
+    \definecolor{brown}{rgb}{0.6,0.6,0}
+    \definecolor{blue}{rgb}{0,.145,.698}
+    \definecolor{purple}{rgb}{.698,.145,.698}
+    \definecolor{cyan}{rgb}{0,.698,.698}
+    \definecolor{lightgray}{gray}{0.5}
+    
+    % bright ansi colors
+    \definecolor{darkgray}{gray}{0.25}
+    \definecolor{lightred}{rgb}{1.0,0.39,0.28}
+    \definecolor{lightgreen}{rgb}{0.48,0.99,0.0}
+    \definecolor{lightblue}{rgb}{0.53,0.81,0.92}
+    \definecolor{lightpurple}{rgb}{0.87,0.63,0.87}
+    \definecolor{lightcyan}{rgb}{0.5,1.0,0.83}
+    
+    % commands and environments needed by pandoc snippets
+    % extracted from the output of `pandoc -s`
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+    % Add ',fontsize=\small' for more characters per line
+    \newenvironment{Shaded}{}{}
+    \newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{\textbf{{#1}}}}
+    \newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.56,0.13,0.00}{{#1}}}
+    \newcommand{\DecValTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\FloatTok}[1]{\textcolor[rgb]{0.25,0.63,0.44}{{#1}}}
+    \newcommand{\CharTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\StringTok}[1]{\textcolor[rgb]{0.25,0.44,0.63}{{#1}}}
+    \newcommand{\CommentTok}[1]{\textcolor[rgb]{0.38,0.63,0.69}{\textit{{#1}}}}
+    \newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.44,0.13}{{#1}}}
+    \newcommand{\AlertTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.02,0.16,0.49}{{#1}}}
+    \newcommand{\RegionMarkerTok}[1]{{#1}}
+    \newcommand{\ErrorTok}[1]{\textcolor[rgb]{1.00,0.00,0.00}{\textbf{{#1}}}}
+    \newcommand{\NormalTok}[1]{{#1}}
+    
+    % Define a nice break command that doesn't care if a line doesn't already
+    % exist.
+    \def\br{\hspace*{\fill} \\* }
+    % Math Jax compatability definitions
+    \def\gt{>}
+    \def\lt{<}
+    % Document parameters
+    \title{}
+    
+    
+    
+
+    % Pygments definitions
+    
+\makeatletter
+\def\PY@reset{\let\PY@it=\relax \let\PY@bf=\relax%
+    \let\PY@ul=\relax \let\PY@tc=\relax%
+    \let\PY@bc=\relax \let\PY@ff=\relax}
+\def\PY@tok#1{\csname PY@tok@#1\endcsname}
+\def\PY@toks#1+{\ifx\relax#1\empty\else%
+    \PY@tok{#1}\expandafter\PY@toks\fi}
+\def\PY@do#1{\PY@bc{\PY@tc{\PY@ul{%
+    \PY@it{\PY@bf{\PY@ff{#1}}}}}}}
+\def\PY#1#2{\PY@reset\PY@toks#1+\relax+\PY@do{#2}}
+
+\expandafter\def\csname PY@tok@gd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gu\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.50,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@gt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.27,0.87}{##1}}}
+\expandafter\def\csname PY@tok@gs\endcsname{\let\PY@bf=\textbf}
+\expandafter\def\csname PY@tok@gr\endcsname{\def\PY@tc##1{\textcolor[rgb]{1.00,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@cm\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@vg\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@m\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@mh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@go\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.53,0.53}{##1}}}
+\expandafter\def\csname PY@tok@ge\endcsname{\let\PY@it=\textit}
+\expandafter\def\csname PY@tok@vc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@il\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@cs\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@cp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.74,0.48,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@gh\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@ni\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.60,0.60,0.60}{##1}}}
+\expandafter\def\csname PY@tok@nl\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.63,0.63,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@no\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.53,0.00,0.00}{##1}}}
+\expandafter\def\csname PY@tok@na\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.49,0.56,0.16}{##1}}}
+\expandafter\def\csname PY@tok@nb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@nd\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@ne\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.82,0.25,0.23}{##1}}}
+\expandafter\def\csname PY@tok@nf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,1.00}{##1}}}
+\expandafter\def\csname PY@tok@si\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@s2\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@vi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@nt\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@nv\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@s1\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@kd\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@sh\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sc\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sx\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@bp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@c1\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@kc\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@c\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.25,0.50,0.50}{##1}}}
+\expandafter\def\csname PY@tok@mf\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@err\endcsname{\def\PY@bc##1{\setlength{\fboxsep}{0pt}\fcolorbox[rgb]{1.00,0.00,0.00}{1,1,1}{\strut ##1}}}
+\expandafter\def\csname PY@tok@mb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@ss\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.10,0.09,0.49}{##1}}}
+\expandafter\def\csname PY@tok@sr\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.53}{##1}}}
+\expandafter\def\csname PY@tok@mo\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@kn\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@mi\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@gp\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.00,0.50}{##1}}}
+\expandafter\def\csname PY@tok@o\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.40,0.40,0.40}{##1}}}
+\expandafter\def\csname PY@tok@kr\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@s\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@kp\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@w\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.73,0.73}{##1}}}
+\expandafter\def\csname PY@tok@kt\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.69,0.00,0.25}{##1}}}
+\expandafter\def\csname PY@tok@ow\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.67,0.13,1.00}{##1}}}
+\expandafter\def\csname PY@tok@sb\endcsname{\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+\expandafter\def\csname PY@tok@k\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.00,0.50,0.00}{##1}}}
+\expandafter\def\csname PY@tok@se\endcsname{\let\PY@bf=\textbf\def\PY@tc##1{\textcolor[rgb]{0.73,0.40,0.13}{##1}}}
+\expandafter\def\csname PY@tok@sd\endcsname{\let\PY@it=\textit\def\PY@tc##1{\textcolor[rgb]{0.73,0.13,0.13}{##1}}}
+
+\def\PYZbs{\char`\\}
+\def\PYZus{\char`\_}
+\def\PYZob{\char`\{}
+\def\PYZcb{\char`\}}
+\def\PYZca{\char`\^}
+\def\PYZam{\char`\&}
+\def\PYZlt{\char`\<}
+\def\PYZgt{\char`\>}
+\def\PYZsh{\char`\#}
+\def\PYZpc{\char`\%}
+\def\PYZdl{\char`\$}
+\def\PYZhy{\char`\-}
+\def\PYZsq{\char`\'}
+\def\PYZdq{\char`\"}
+\def\PYZti{\char`\~}
+% for compatibility with earlier versions
+\def\PYZat{@}
+\def\PYZlb{[}
+\def\PYZrb{]}
+\makeatother
+
+
+    % Exact colors from NB
+    \definecolor{incolor}{rgb}{0.0, 0.0, 0.5}
+    \definecolor{outcolor}{rgb}{0.545, 0.0, 0.0}
+
+
+
+    
+    % Prevent overflowing lines due to hard-to-break entities
+    \sloppy 
+    % Setup hyperref package
+    \hypersetup{
+      breaklinks=true,  % so long urls are correctly broken across lines
+      colorlinks=true,
+      urlcolor=blue,
+      linkcolor=darkorange,
+      citecolor=darkgreen,
+      }
+    % Slightly bigger margins than the latex defaults
+    
+     
+
+    \begin{document}
+    
+    
+    \maketitle
+    
+    
+
+    
+    \section{Functions}\label{functions}
+
+    Most of the times, In a algorithm the statements keep repeating and it
+will be a tedious job to execute the same statements again and again and
+will consume a lot of memory and is not efficient. Enter Functions.
+
+    This is the basic syntax of a function
+
+    def funcname(arg1, arg2,\ldots{} argN):
+
+\begin{verbatim}
+''' Document String'''
+
+statements
+
+
+return <value>
+\end{verbatim}
+
+    Read the above syntax as, A function by name ``funcname'' is defined,
+which accepts arguements ``arg1,arg2,\ldots{}.argN''. The function is
+documented and it is `''Document String'''. The function after executing
+the statements returns a ``value''.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}1}]:} \PY{k}{print} \PY{l+s}{\PYZdq{}}\PY{l+s}{Hey Rajath!}\PY{l+s}{\PYZdq{}}
+        \PY{k}{print} \PY{l+s}{\PYZdq{}}\PY{l+s}{Rajath, How do you do?}\PY{l+s}{\PYZdq{}}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Hey Rajath!
+Rajath, How do you do?
+    \end{Verbatim}
+
+    Instead of writing the above two statements every single time it can be
+replaced by defining a function which would do the job in just one line.
+
+Defining a function firstfunc().
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}2}]:} \PY{k}{def} \PY{n+nf}{firstfunc}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+            \PY{k}{print} \PY{l+s}{\PYZdq{}}\PY{l+s}{Hey Rajath!}\PY{l+s}{\PYZdq{}}
+            \PY{k}{print} \PY{l+s}{\PYZdq{}}\PY{l+s}{Rajath, How do you do?}\PY{l+s}{\PYZdq{}}   
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}3}]:} \PY{n}{firstfunc}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Hey Rajath!
+Rajath, How do you do?
+    \end{Verbatim}
+
+    \textbf{firstfunc()} every time just prints the message to a single
+person. We can make our function \textbf{firstfunc()} to accept
+arguements which will store the name and then prints respective to that
+accepted name. To do so, add a argument within the function as shown.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}4}]:} \PY{k}{def} \PY{n+nf}{firstfunc}\PY{p}{(}\PY{n}{username}\PY{p}{)}\PY{p}{:}
+            \PY{k}{print} \PY{l+s}{\PYZdq{}}\PY{l+s}{Hey}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{username} \PY{o}{+} \PY{l+s}{\PYZsq{}}\PY{l+s}{!}\PY{l+s}{\PYZsq{}}
+            \PY{k}{print} \PY{n}{username} \PY{o}{+} \PY{l+s}{\PYZsq{}}\PY{l+s}{,}\PY{l+s}{\PYZsq{}} \PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{How do you do?}\PY{l+s}{\PYZdq{}}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}5}]:} \PY{n}{name1} \PY{o}{=} \PY{n+nb}{raw\PYZus{}input}\PY{p}{(}\PY{l+s}{\PYZsq{}}\PY{l+s}{Please enter your name : }\PY{l+s}{\PYZsq{}}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Please enter your name : Guido
+    \end{Verbatim}
+
+    The name ``Guido'' is actually stored in name1. So we pass this variable
+to the function \textbf{firstfunc()} as the variable username because
+that is the variable that is defined for this function. i.e name1 is
+passed as username.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}6}]:} \PY{n}{firstfunc}\PY{p}{(}\PY{n}{name1}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Hey Guido!
+Guido, How do you do?
+    \end{Verbatim}
+
+    Let us simplify this even further by defining another function
+\textbf{secondfunc()} which accepts the name and stores it inside a
+variable and then calls the \textbf{firstfunc()} from inside the
+function itself.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}7}]:} \PY{k}{def} \PY{n+nf}{firstfunc}\PY{p}{(}\PY{n}{username}\PY{p}{)}\PY{p}{:}
+            \PY{k}{print} \PY{l+s}{\PYZdq{}}\PY{l+s}{Hey}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{username} \PY{o}{+} \PY{l+s}{\PYZsq{}}\PY{l+s}{!}\PY{l+s}{\PYZsq{}}
+            \PY{k}{print} \PY{n}{username} \PY{o}{+} \PY{l+s}{\PYZsq{}}\PY{l+s}{,}\PY{l+s}{\PYZsq{}} \PY{p}{,}\PY{l+s}{\PYZdq{}}\PY{l+s}{How do you do?}\PY{l+s}{\PYZdq{}}
+        \PY{k}{def} \PY{n+nf}{secondfunc}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+            \PY{n}{name} \PY{o}{=} \PY{n+nb}{raw\PYZus{}input}\PY{p}{(}\PY{l+s}{\PYZdq{}}\PY{l+s}{Please enter your name : }\PY{l+s}{\PYZdq{}}\PY{p}{)}
+            \PY{n}{firstfunc}\PY{p}{(}\PY{n}{name}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}8}]:} \PY{n}{secondfunc}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Please enter your name : karthik
+Hey karthik!
+karthik, How do you do?
+    \end{Verbatim}
+
+    \subsection{Return Statement}\label{return-statement}
+
+    When the function results in some value and that value has to be stored
+in a variable or needs to be sent back or returned for further operation
+to the main algorithm, return statement is used.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}9}]:} \PY{k}{def} \PY{n+nf}{times}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{y}\PY{p}{)}\PY{p}{:}
+            \PY{n}{z} \PY{o}{=} \PY{n}{x}\PY{o}{*}\PY{n}{y}
+            \PY{k}{return} \PY{n}{z}
+\end{Verbatim}
+
+    The above defined \textbf{times( )} function accepts two arguements and
+return the variable z which contains the result of the product of the
+two arguements
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}10}]:} \PY{n}{c} \PY{o}{=} \PY{n}{times}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}
+         \PY{k}{print} \PY{n}{c}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+20
+    \end{Verbatim}
+
+    The z value is stored in variable c and can be used for further
+operations.
+
+    Instead of declaring another variable the entire statement itself can be
+used in the return statement as shown.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}11}]:} \PY{k}{def} \PY{n+nf}{times}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{y}\PY{p}{)}\PY{p}{:}
+             \PY{l+s+sd}{\PYZsq{}\PYZsq{}\PYZsq{}This multiplies the two input arguments\PYZsq{}\PYZsq{}\PYZsq{}}
+             \PY{k}{return} \PY{n}{x}\PY{o}{*}\PY{n}{y}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}12}]:} \PY{n}{c} \PY{o}{=} \PY{n}{times}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}
+         \PY{k}{print} \PY{n}{c}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+20
+    \end{Verbatim}
+
+    Since the \textbf{times( )} is now defined, we can document it as shown
+above. This document is returned whenever \textbf{times( )} function is
+called under \textbf{help( )} function.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}13}]:} \PY{n}{help}\PY{p}{(}\PY{n}{times}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+Help on function times in module \_\_main\_\_:
+
+times(x, y)
+    This multiplies the two input arguments
+    \end{Verbatim}
+
+    Multiple variable can also be returned, But keep in mind the order.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}14}]:} \PY{n}{eglist} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{10}\PY{p}{,}\PY{l+m+mi}{50}\PY{p}{,}\PY{l+m+mi}{30}\PY{p}{,}\PY{l+m+mi}{12}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{,}\PY{l+m+mi}{8}\PY{p}{,}\PY{l+m+mi}{100}\PY{p}{]}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}15}]:} \PY{k}{def} \PY{n+nf}{egfunc}\PY{p}{(}\PY{n}{eglist}\PY{p}{)}\PY{p}{:}
+             \PY{n}{highest} \PY{o}{=} \PY{n+nb}{max}\PY{p}{(}\PY{n}{eglist}\PY{p}{)}
+             \PY{n}{lowest} \PY{o}{=} \PY{n+nb}{min}\PY{p}{(}\PY{n}{eglist}\PY{p}{)}
+             \PY{n}{first} \PY{o}{=} \PY{n}{eglist}\PY{p}{[}\PY{l+m+mi}{0}\PY{p}{]}
+             \PY{n}{last} \PY{o}{=} \PY{n}{eglist}\PY{p}{[}\PY{o}{\PYZhy{}}\PY{l+m+mi}{1}\PY{p}{]}
+             \PY{k}{return} \PY{n}{highest}\PY{p}{,}\PY{n}{lowest}\PY{p}{,}\PY{n}{first}\PY{p}{,}\PY{n}{last}
+\end{Verbatim}
+
+    If the function is just called without any variable for it to be
+assigned to, the result is returned inside a tuple. But if the variables
+are mentioned then the result is assigned to the variable in a
+particular order which is declared in the return statement.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}16}]:} \PY{n}{egfunc}\PY{p}{(}\PY{n}{eglist}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}16}]:} (100, 6, 10, 100)
+\end{Verbatim}
+        
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}17}]:} \PY{n}{a}\PY{p}{,}\PY{n}{b}\PY{p}{,}\PY{n}{c}\PY{p}{,}\PY{n}{d} \PY{o}{=} \PY{n}{egfunc}\PY{p}{(}\PY{n}{eglist}\PY{p}{)}
+         \PY{k}{print} \PY{l+s}{\PYZsq{}}\PY{l+s}{ a =}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{n}{a}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{ b =}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{n}{b}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{ c =}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{n}{c}\PY{p}{,}\PY{l+s}{\PYZsq{}}\PY{l+s+se}{\PYZbs{}n}\PY{l+s}{ d =}\PY{l+s}{\PYZsq{}}\PY{p}{,}\PY{n}{d}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+a = 100 
+ b = 6 
+ c = 10 
+ d = 100
+    \end{Verbatim}
+
+    \subsection{Implicit arguments}\label{implicit-arguments}
+
+    When an argument of a function is common in majority of the cases or it
+is ``implicit'' this concept is used.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}18}]:} \PY{k}{def} \PY{n+nf}{implicitadd}\PY{p}{(}\PY{n}{x}\PY{p}{,}\PY{n}{y}\PY{o}{=}\PY{l+m+mi}{3}\PY{p}{)}\PY{p}{:}
+             \PY{k}{return} \PY{n}{x}\PY{o}{+}\PY{n}{y}
+\end{Verbatim}
+
+    \textbf{implicitadd( )} is a function accepts two arguments but most of
+the times the first argument needs to be added just by 3. Hence the
+second argument is assigned the value 3. Here the second argument is
+implicit.
+
+    Now if the second argument is not defined when calling the
+\textbf{implicitadd( )} function then it considered as 3.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}19}]:} \PY{n}{implicitadd}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}19}]:} 7
+\end{Verbatim}
+        
+    But if the second argument is specified then this value overrides the
+implicit value assigned to the argument
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}20}]:} \PY{n}{implicitadd}\PY{p}{(}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}20}]:} 8
+\end{Verbatim}
+        
+    \subsection{Any number of arguments}\label{any-number-of-arguments}
+
+    If the number of arguments that is to be accepted by a function is not
+known then a asterisk symbol is used before the argument.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}21}]:} \PY{k}{def} \PY{n+nf}{add\PYZus{}n}\PY{p}{(}\PY{o}{*}\PY{n}{args}\PY{p}{)}\PY{p}{:}
+             \PY{n}{res} \PY{o}{=} \PY{l+m+mi}{0}
+             \PY{n}{reslist} \PY{o}{=} \PY{p}{[}\PY{p}{]}
+             \PY{k}{for} \PY{n}{i} \PY{o+ow}{in} \PY{n}{args}\PY{p}{:}
+                 \PY{n}{reslist}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{n}{i}\PY{p}{)}
+             \PY{k}{print} \PY{n}{reslist}
+             \PY{k}{return} \PY{n+nb}{sum}\PY{p}{(}\PY{n}{reslist}\PY{p}{)}
+\end{Verbatim}
+
+    The above function accepts any number of arguments, defines a list and
+appends all the arguments into that list and return the sum of all the
+arguments.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}22}]:} \PY{n}{add\PYZus{}n}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[1, 2, 3, 4, 5]
+    \end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}22}]:} 15
+\end{Verbatim}
+        
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}23}]:} \PY{n}{add\PYZus{}n}\PY{p}{(}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[1, 2, 3]
+    \end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}23}]:} 6
+\end{Verbatim}
+        
+    \subsection{Global and Local
+Variables}\label{global-and-local-variables}
+
+    Whatever variable is declared inside a function is local variable and
+outside the function in global variable.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}24}]:} \PY{n}{eg1} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{]}
+\end{Verbatim}
+
+    In the below function we are appending a element to the declared list
+inside the function. eg2 variable declared inside the function is a
+local variable.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}25}]:} \PY{k}{def} \PY{n+nf}{egfunc1}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+             \PY{k}{def} \PY{n+nf}{thirdfunc}\PY{p}{(}\PY{n}{arg1}\PY{p}{)}\PY{p}{:}
+                 \PY{n}{eg2} \PY{o}{=} \PY{n}{arg1}\PY{p}{[}\PY{p}{:}\PY{p}{]}
+                 \PY{n}{eg2}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{l+m+mi}{6}\PY{p}{)}
+                 \PY{k}{print} \PY{l+s}{\PYZdq{}}\PY{l+s}{This is happening inside the function :}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{eg2} 
+             \PY{k}{print} \PY{l+s}{\PYZdq{}}\PY{l+s}{This is happening before the function is called : }\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{eg1}
+             \PY{n}{thirdfunc}\PY{p}{(}\PY{n}{eg1}\PY{p}{)}
+             \PY{k}{print} \PY{l+s}{\PYZdq{}}\PY{l+s}{This is happening outside the function :}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{eg1}   
+             \PY{k}{print} \PY{l+s}{\PYZdq{}}\PY{l+s}{Accessing a variable declared inside the function from outside :}\PY{l+s}{\PYZdq{}} \PY{p}{,} \PY{n}{eg2}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}26}]:} \PY{n}{egfunc1}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+This is happening before the function is called :  [1, 2, 3, 4, 5]
+This is happening inside the function : [1, 2, 3, 4, 5, 6]
+This is happening outside the function : [1, 2, 3, 4, 5]
+Accessing a variable declared inside the function from outside :
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+        ---------------------------------------------------------------------------
+
+        NameError                                 Traceback (most recent call last)
+
+        <ipython-input-26-949117e1ddc5> in <module>()
+    ----> 1 egfunc1()
+    
+
+        <ipython-input-25-0da329480da9> in egfunc1()
+          7     thirdfunc(eg1)
+          8     print "This is happening outside the function :", eg1
+    ----> 9     print "Accessing a variable declared inside the function from outside :" , eg2
+    
+
+        NameError: global name 'eg2' is not defined
+
+    \end{Verbatim}
+
+    If a \textbf{global} variable is defined as shown in the example below
+then that variable can be called from anywhere.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}27}]:} \PY{n}{eg3} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{]}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+
+    \end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}28}]:} \PY{k}{def} \PY{n+nf}{egfunc1}\PY{p}{(}\PY{p}{)}\PY{p}{:}
+             \PY{k}{def} \PY{n+nf}{thirdfunc}\PY{p}{(}\PY{n}{arg1}\PY{p}{)}\PY{p}{:}
+                 \PY{k}{global} \PY{n}{eg2}
+                 \PY{n}{eg2} \PY{o}{=} \PY{n}{arg1}\PY{p}{[}\PY{p}{:}\PY{p}{]}
+                 \PY{n}{eg2}\PY{o}{.}\PY{n}{append}\PY{p}{(}\PY{l+m+mi}{6}\PY{p}{)}
+                 \PY{k}{print} \PY{l+s}{\PYZdq{}}\PY{l+s}{This is happening inside the function :}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{eg2} 
+             \PY{k}{print} \PY{l+s}{\PYZdq{}}\PY{l+s}{This is happening before the function is called : }\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{eg1}
+             \PY{n}{thirdfunc}\PY{p}{(}\PY{n}{eg1}\PY{p}{)}
+             \PY{k}{print} \PY{l+s}{\PYZdq{}}\PY{l+s}{This is happening outside the function :}\PY{l+s}{\PYZdq{}}\PY{p}{,} \PY{n}{eg1}   
+             \PY{k}{print} \PY{l+s}{\PYZdq{}}\PY{l+s}{Accessing a variable declared inside the function from outside :}\PY{l+s}{\PYZdq{}} \PY{p}{,} \PY{n}{eg2}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}29}]:} \PY{n}{egfunc1}\PY{p}{(}\PY{p}{)}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+This is happening before the function is called :  [1, 2, 3, 4, 5]
+This is happening inside the function : [1, 2, 3, 4, 5, 6]
+This is happening outside the function : [1, 2, 3, 4, 5]
+Accessing a variable declared inside the function from outside : [1, 2, 3, 4, 5, 6]
+    \end{Verbatim}
+
+    \subsection{Lambda Functions}\label{lambda-functions}
+
+    These are small functions which are not defined with any name and carry
+a single expression whose result is returned. Lambda functions comes
+very handy when operating with lists. These function are defined by the
+keyword \textbf{lambda} followed by the variables, a colon and the
+respective expression.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}30}]:} \PY{n}{z} \PY{o}{=} \PY{k}{lambda} \PY{n}{x}\PY{p}{:} \PY{n}{x} \PY{o}{*} \PY{n}{x}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}31}]:} \PY{n}{z}\PY{p}{(}\PY{l+m+mi}{8}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}31}]:} 64
+\end{Verbatim}
+        
+    \subsubsection{map}\label{map}
+
+    \textbf{map( )} function basically executes the function that is defined
+to each of the list's element separately.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}32}]:} \PY{n}{list1} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{,}\PY{l+m+mi}{7}\PY{p}{,}\PY{l+m+mi}{8}\PY{p}{,}\PY{l+m+mi}{9}\PY{p}{]}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}33}]:} \PY{n}{eg} \PY{o}{=} \PY{n+nb}{map}\PY{p}{(}\PY{k}{lambda} \PY{n}{x}\PY{p}{:}\PY{n}{x}\PY{o}{+}\PY{l+m+mi}{2}\PY{p}{,} \PY{n}{list1}\PY{p}{)}
+         \PY{k}{print} \PY{n}{eg}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[3, 4, 5, 6, 7, 8, 9, 10, 11]
+    \end{Verbatim}
+
+    You can also add two lists.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}34}]:} \PY{n}{list2} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{9}\PY{p}{,}\PY{l+m+mi}{8}\PY{p}{,}\PY{l+m+mi}{7}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{1}\PY{p}{]}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}35}]:} \PY{n}{eg2} \PY{o}{=} \PY{n+nb}{map}\PY{p}{(}\PY{k}{lambda} \PY{n}{x}\PY{p}{,}\PY{n}{y}\PY{p}{:}\PY{n}{x}\PY{o}{+}\PY{n}{y}\PY{p}{,} \PY{n}{list1}\PY{p}{,}\PY{n}{list2}\PY{p}{)}
+         \PY{k}{print} \PY{n}{eg2}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+[10, 10, 10, 10, 10, 10, 10, 10, 10]
+    \end{Verbatim}
+
+    Not only lambda function but also other built in functions can also be
+used.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}36}]:} \PY{n}{eg3} \PY{o}{=} \PY{n+nb}{map}\PY{p}{(}\PY{n+nb}{str}\PY{p}{,}\PY{n}{eg2}\PY{p}{)}
+         \PY{k}{print} \PY{n}{eg3}
+\end{Verbatim}
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+['10', '10', '10', '10', '10', '10', '10', '10', '10']
+    \end{Verbatim}
+
+    \subsubsection{filter}\label{filter}
+
+    \textbf{filter( )} function is used to filter out the values in a list.
+Note that \textbf{filter()} function returns the result in a new list.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}37}]:} \PY{n}{list1} \PY{o}{=} \PY{p}{[}\PY{l+m+mi}{1}\PY{p}{,}\PY{l+m+mi}{2}\PY{p}{,}\PY{l+m+mi}{3}\PY{p}{,}\PY{l+m+mi}{4}\PY{p}{,}\PY{l+m+mi}{5}\PY{p}{,}\PY{l+m+mi}{6}\PY{p}{,}\PY{l+m+mi}{7}\PY{p}{,}\PY{l+m+mi}{8}\PY{p}{,}\PY{l+m+mi}{9}\PY{p}{]}
+\end{Verbatim}
+
+    To get the elements which are less than 5,
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}38}]:} \PY{n+nb}{filter}\PY{p}{(}\PY{k}{lambda} \PY{n}{x}\PY{p}{:}\PY{n}{x}\PY{o}{\PYZlt{}}\PY{l+m+mi}{5}\PY{p}{,}\PY{n}{list1}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}38}]:} [1, 2, 3, 4]
+\end{Verbatim}
+        
+    Notice what happens when \textbf{map()} is used.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}39}]:} \PY{n+nb}{map}\PY{p}{(}\PY{k}{lambda} \PY{n}{x}\PY{p}{:}\PY{n}{x}\PY{o}{\PYZlt{}}\PY{l+m+mi}{5}\PY{p}{,} \PY{n}{list1}\PY{p}{)}
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}39}]:} [True, True, True, True, False, False, False, False, False]
+\end{Verbatim}
+        
+    We can conclude that, whatever is returned true in \textbf{map( )}
+function that particular element is returned when \textbf{filter( )}
+function is used.
+
+    \begin{Verbatim}[commandchars=\\\{\}]
+{\color{incolor}In [{\color{incolor}40}]:} \PY{n+nb}{filter}\PY{p}{(}\PY{k}{lambda} \PY{n}{x}\PY{p}{:}\PY{n}{x}\PY{o}{\PYZpc{}}\PY{k}{4}==0,list1)
+\end{Verbatim}
+
+            \begin{Verbatim}[commandchars=\\\{\}]
+{\color{outcolor}Out[{\color{outcolor}40}]:} [4, 8]
+\end{Verbatim}
+        
+
+    % Add a bibliography block to the postdoc
+    
+  \newpage
+  
+  \input{07}  
+    
+    \end{document}
