@@ -41,7 +41,7 @@ In Canopy and Anaconda, Open the respective terminals and execute the above.
 
 ##How to learn from this resource?
 
-You can download the pdf copy from [here](https://github.com/rajathkumarmp/Python-Lectures/blob/master/Python.pdf)
+You can download the pdf copy from here : [Get Started with Python](https://github.com/rajathkumarmp/Python-Lectures/blob/master/Python.pdf)
 
 It is better to download all the ipython notebooks from this repository https://github.com/rajathkumarmp/Python-Lectures and learn it on the notebook itself rather than having to refer to a pdf.
 
