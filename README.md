@@ -1,11 +1,16 @@
 
-#Python-Lectures
+# Python-Lectures  
 
-##Introduction
+
+
+
+[Andreas Ernst](http://users.monash.edu/~andrease/) has improvised and updated the repo to python 3, [Link](https://gitlab.erc.monash.edu.au/andrease/Python4Maths/tree/master)
+
+## Introduction
 
 Python is a modern, robust, high level programming language. It is very easy to pick up even if you are completely new to programming.
 
-##Installation
+## Installation
 
 Mac OS X and Linux comes pre installed with python. Windows users can download python from https://www.python.org/downloads/ .
 
@@ -15,23 +20,23 @@ To install IPython run,
     
 This will install all the necessary dependencies for the notebook, qtconsole, tests etc.
 
-###Installation from unofficial distributions
+### Installation from unofficial distributions
 
 Installing all the necessary libraries might prove troublesome. Anaconda and Canopy comes pre packaged with all the necessary python libraries and also IPython.
 
-####Anaconda
+#### Anaconda
 
 Download Anaconda from https://www.continuum.io/downloads
 
 Anaconda is completely free and includes more than 300 python packages. Both python 2.7 and 3.4 options are available.
 
-####Canopy
+#### Canopy
 
 Download Canopy from https://store.enthought.com/downloads/#default
 
 Canopy has a premium version which offers 300+ python packages. But the free version works just fine. Canopy as of now supports only 2.7 but it comes with its own text editor and IPython environment.
 
-##Launching IPython Notebook
+## Launching IPython Notebook
 
 From the terminal
 
@@ -39,7 +44,7 @@ From the terminal
 
 In Canopy and Anaconda, Open the respective terminals and execute the above.
 
-##How to learn from this resource?
+## How to learn from this resource?
 
 You can download the pdf copy from here : [Get Started with Python](https://github.com/rajathkumarmp/Python-Lectures/blob/master/Python.pdf)
 
@@ -51,7 +56,7 @@ Launch ipython notebook from the folder which contains the notebooks. Open each 
     
 This will clear all the outputs and now you can understand each statement and learn interactively.
 
-##Table of contents
+## Table of contents
 
 
 
@@ -82,6 +87,6 @@ This will clear all the outputs and now you can understand each statement and le
 
 These are online read-only versions.
 
-##License
+## License
 
 This work is licensed under the Creative Commons Attribution 3.0 Unported License. To view a copy of this license, visit http://creativecommons.org/licenses/by/3.0/
