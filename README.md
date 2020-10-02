@@ -26,7 +26,7 @@ Installing all the necessary libraries might prove troublesome. Anaconda and Can
 
 #### Anaconda
 
-Download Anaconda from https://www.continuum.io/downloads
+Download Anaconda from https://www.anaconda.com/products/individual
 
 Anaconda is completely free and includes more than 300 python packages. Both python 2.7 and 3.4 options are available.
 
